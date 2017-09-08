@@ -1,0 +1,49 @@
+body {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	background: #f5f5f5;
+
+	#builder > .container {
+		background: #f5f5f5;
+	}
+}
+
+#loader,
+#canvasOverlay {
+	background: $yellow;
+
+	span,
+	.loader {
+		color: $dark;
+	}
+}
+
+.screen {
+	margin-top: 10px;
+	width: 96%;
+
+	.frameWrapper {
+		box-shadow: $shadow-center;
+	}
+
+	.start {
+		span {
+			background: $dark;
+			color: $yellow;
+			box-shadow: $shadow-center;
+		}
+	}
+
+	.toolbar .left {
+		&.red {
+			background: #FF5C5A;
+		}
+
+		&.yellow {
+			background: #FFBE42;
+		}
+
+		&.green {
+			background: #0DCB4E;
+		}
+	}
+}

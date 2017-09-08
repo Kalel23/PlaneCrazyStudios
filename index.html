@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Urip Template Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flat-ui-pro.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/builder.css" rel="stylesheet">
+    <link href="css/spectrum.css" rel="stylesheet">
+    <link href="css/chosen.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="urip-elements/fonts/icomoon/icomoon.css" rel="stylesheet">
+
+    <link href="css/wow-ui.css" rel="stylesheet">
+
+    <!-- FAV AND TOUCH ICONS -->
+    <link rel="shortcut icon" href="urip-elements/images/favicon/favicon.ico">
+
+    <link rel="icon" type="image/png" href="urip-elements/images/favicon/favicon-32.png">
+
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="urip-elements/images/favicon/apple-touch-icon-152.png">
+
+	<!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="urip-elements/images/favicon/apple-touch-icon-144.png">
+
+	<!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="urip-elements/images/favicon/apple-touch-icon-114.png">
+
+	<!-- For iPad and iPad mini models with a 1× display -->
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="urip-elements/images/favicon/apple-touch-icon-76.png">
+
+	<!-- For first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="urip-elements/images/favicon/apple-touch-icon-72.png">
+
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="urip-elements/images/favicon/apple-touch-icon-57.png">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 10]>
+    <link href="css/ie-masonry.css" rel="stylesheet">
+    <script src="js/masonry.pkgd.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div id="builder">
+
+        <div class="menu" id="menu">
+
+            <div class="main" id="main">
+
+                <h3>
+                    <span class="fui-list"></span> Blocks
+                </h3>
+
+                <ul id="elementCats">
+                    <li><a href="#" id="all">All Blocks</a></li>
+                </ul>
+
+                <a class="toggle" href="#">
+                    <span class="custom-icon"></span>
+                </a>
+
+                <hr>
+
+                <h3>
+                    <span class="fui-windows"></span> Pages
+                </h3>
+
+                <ul id="pages">
+
+                    <li style="display: none;" id="newPageLI">
+                        <input type="text" value="index" name="page">
+                        <span class="pageButtons">
+                            <a href="" class="fileEdit"><span class="fui-new"></span></a>
+                            <a href="" class="fileDel"><span class="fui-cross"></span></a>
+                            <a class="btn btn-xs btn-primary btn-embossed fileSave" href="#"><span class="fui-check"></span></a>
+                        </span>
+                    </li>
+
+                </ul>
+
+                <div class="sideButtons clearfix">
+                    <a href="#" class="btn btn-primary btn-sm btn-embossed" id="addPage">
+                        <span class="fui-plus"></span> Add Page
+                    </a>
+                </div>
+
+            </div><!-- /##main -->
+
+            <div class="second" id="second">
+
+                <ul id="elements">
+
+                </ul>
+
+            </div><!-- /#second -->
+
+        </div><!-- /#menu -->
+
+        <div class="container">
+
+            <header class="clearfix affix">
+
+                <ul class="nav nav-pills nav-inverse pull-left responsiveToggle" id="responsiveToggle">
+                    <li>
+                        <a href="" data-responsive="mobile">
+                            <i class="fa fa-mobile" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" data-responsive="tablet">
+                            <i class="fa fa-tablet" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="" data-responsive="desktop">
+                            <i class="fa fa-desktop" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="#" id="clearScreen" class="btn btn-inverse pull-right actionButtons nohover">
+                    <i class="fui-trash"></i>
+                    <span>Empty Page</span>
+                </a>
+
+                <a href="#previewModal" data-toggle="modal" class="btn btn-inverse pull-right actionButtons nohover" id="buttonPreview">
+                    <i class="fui-window"></i>
+                    <span>Preview</span>
+                </a>
+
+                <a href="#exportModal" id="exportPage" data-toggle="modal" class="btn btn-inverse pull-right actionButtons nohover">
+                    <i class="fui-export"></i>
+                    <span>Export</span>
+                </a>
+
+                <a href="#" id="savePage" data-toggle="modal" class="btn btn-primary pull-right nohover">
+                    <i class="fui-check"></i>
+                    <span class="bLabel">No change</span>
+                </a>
+
+            </header>
+
+            <div class="screen" id="screen">
+
+                <div class="toolbar">
+
+                    <div class="buttons clearfix">
+                        <span class="left red"></span>
+                        <span class="left yellow"></span>
+                        <span class="left green"></span>
+                    </div>
+
+                    <div class="title">
+                        <span id="pageTitle">index</span>
+                    </div>
+
+                </div>
+
+                <div id="frameWrapper" class="frameWrapper empty">
+                    <div id="pageList">
+
+                    </div>
+                    <div class="start" id="start">
+                        <span>BUILD YOUR PAGE BY DRAGGING BLOCKS ONTO THE CANVAS</span>
+                    </div>
+                </div>
+
+            </div><!-- /#screen -->
+
+        </div><!-- /.container -->
+
+        <div id="styleEditor" class="styleEditor">
+
+            <a href="#" class="close"><span class="fui-cross-circle"></span></a>
+
+            <h3><span class="fui-new"></span> Detail editor</h3>
+
+            <ul class="breadcrumb">
+                <li>EDITING:</li>
+                <li class="active" id="editingElement">p</li>
+            </ul>
+
+            <ul class="nav nav-tabs" id="detailTabs">
+                <li class="active">
+                    <a href="#tab1">
+                        <span class="fui-new"></span> Style
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="#link_Tab" id="link_Link">
+                        <span class="fui-clip"></span> Link
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="#image_Tab" id="img_Link">
+                        <span class="fui-image"></span> Image
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="#icon_Tab" id="icon_Link">
+                        <span class="fa fa-flag"></span> Icon
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="#video_Tab" id="video_Link">
+                        <span class="fa fa-youtube-play"></span> Video
+                    </a>
+                </li>
+            </ul><!-- /tabs -->
+
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="tab1">
+
+                    <form class="" role="form" id="stylingForm">
+
+                        <div id="styleElements">
+
+                            <div class="form-group clearfix" style="display: none;" id="styleElTemplate">
+                                <label for="" class="control-label"></label>
+                                <input type="text" class="form-control input-sm" id="" placeholder="">
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div><!-- /.tab-pane -->
+
+                <div class="tab-pane link_Tab" id="link_Tab">
+
+                    <div class="form-group fullWidth">
+                        <input type="text" class="form-control" id="linkText" name="linkText" placeholder="Link text" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <select id="pageLinksDropdown" class="form-control select select-primary btn-block mbl">
+                            <option value="#">Choose a page</option>
+                        </select>
+                    </div>
+
+                    <p class="text-center or">
+                        <span>or</span>
+                    </p>
+
+                    <div class="form-group">
+                        <!--<select id="pageLinksDropdown" class="form-control select select-primary btn-block mbl">-->
+                        <select id="internalLinksDropdown" class="form-control select select-primary btn-block mbl">
+                            <option value="#">Choose a block</option>
+                        </select>
+                    </div>
+
+                    <p class="text-center or">
+                        <span>or enter URL</span>
+                    </p>
+
+                    <input type="text" class="form-control" id="internalLinksCustom" placeholder="http://somewhere.com/somepage" value="">
+
+                </div><!-- /.tab-pane -->
+
+                <div class="tab-pane imageFileTab" id="image_Tab">
+
+                    <label>Enter image path:</label>
+
+                    <input type="text" class="form-control" id="imageURL" placeholder="Enter an image URL" value="">
+
+                    <p class="text-center or">
+                        <span>OR</span>
+                    </p>
+
+                    <form id="imageUploadForm" action="_upload.php">
+
+                        <label>Upload image:</label>
+
+                        <div class="form-group">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 100%; height: 150px; line-height: 150px;"></div>
+                                <div>
+                                    <span class="btn btn-primary btn-sm btn-embossed btn-file">
+                                        <span class="fileinput-new"><span class="fui-image"></span>  Select image</span>
+                                        <span class="fileinput-exists"><span class="fui-gear"></span>  Change</span>
+                                        <input type="file" name="imageFileField" id="imageFileField">
+                                    </span>
+                                    <a href="#" class="btn btn-primary btn-sm btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-trash"></span>  Remove</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div><!-- /.tab-pane -->
+
+                <!-- /tabs -->
+                <div class="tab-pane iconTab" id="icon_Tab">
+
+                    <label>Choose an icon: </label>
+                    <select id="icons" data-placeholder="" class>
+                        <option value="icon-add-to-list">&#xe600; add-to-list</option>
+                        <option value="icon-classic-computer">&#xe601; classic-computer</option>
+                        <option value="icon-controller-fast-backward">&#xe602; controller-fast-backward</option>
+                        <option value="icon-creative-commons-attribution">&#xe603; creative-commons-attribution</option>
+                        <option value="icon-creative-commons-noderivs
+">&#xe604; creative-commons-noderivs
+</option>
+                        <option value="icon-creative-commons-noncommercial-eu">&#xe605; creative-commons-noncommercial-eu</option>
+                        <option value="icon-creative-commons-noncommercial-us">&#xe606; creative-commons-noncommercial-us</option>
+                        <option value="icon-remove-user">&#xe06d; remove-user</option>
+                        <option value="icon-warning">&#xe60e; warning</option>
+                        <option value="icon-arrow-bold-down">&#xe60f; arrow-bold-down</option>
+                        <option value="icon-arrow-bold-left">&#xe610; arrow-bold-left</option>
+                        <option value="icon-arrow-bold-right">&#xe611; arrow-bold-right</option>
+                        <option value="icon-arrow-bold-up">&#xe612; arrow-bold-up</option>
+                        <option value="icon-arrow-long-down">&#xe615; arrow-long-down</option>
+                        <option value="icon-arrow-long-left">&#xe616; arrow-long-left</option>
+                        <option value="icon-arrow-long-right">&#xe617; arrow-long-right</option>
+                        <option value="icon-arrow-long-ip">&#xe618; arrow-long-up</option>
+                        <option value="icon-arrow-right">&#xe619; arrow-right</option>
+                        <option value="icon-arrow-up">&#xe61a; arrow-up</option>
+                        <option value="icon-arrow-with-circle-down">&#xe61b; arrow-with-circle-down</option>
+                        <option value="icon-arrow-with-circle-left">&#xe61c; arrow-with-circle-left</option>
+                        <option value="icon-arrow-with-circle-right">&#xe61d; arrow-with-circle-right</option>
+                        <option value="icon-arrow-with-circle-up">&#xe61e; arrow-with-circle-up</option>
+                        <option value="icon-bookmark">&#xe61f; bookmark</option>
+                        <option value="icon-bookmarks">&#xe620; bookmarks</option>
+                        <option value="icon-chevron-down">&#xe621; chevron-down</option>
+                        <option value="icon-chevron-left">&#xe622; chevron-left</option>
+                        <option value="icon-chevron-right">&#xe623; chevron-right</option>
+                        <option value="icon-chevron-up">&#xe62c; chevron-up</option>
+                        <option value="icon-cloud">&#xe631; cloud</option>
+                        <option value="icon-controller-fast-forward">&#xe632; controller-fast-forward</option>
+                        <option value="icon-controller-jump-to-start">&#xe633; controller-jump-to-start</option>
+                        <option value="icon-controller-next">&#xe634; controller-next</option>
+                        <option value="icon-controller-paus">&#xe635; controller-paus</option>
+                        <option value="icon-controller-play">&#xe636; controller-play/option>
+                        <option value="icon-controller-record">&#xe637; controller-record</option>
+                        <option value="icon-controller-stop">&#xe638; controller-stop</option>
+                        <option value="icon-controller-volume">&#xe639; controller-volume</option>
+                        <option value="icon-dot-single">&#xe63a; dot-single</option>
+                        <option value="icon-dots-three-horizontal">&#xe63b; dots-three-horizontal</option>
+                        <option value="icon-dots-three-vertical">&#xe63c; dots-three-vertical</option>
+                        <option value="icon-dots-two-horizontal">&#xe63d; dots-two-horizontal</option>
+                        <option value="icon-dots-two-vertical">&#xe63e; dots-two-vertical</option>
+                        <option value="icon-download">&#xe63f; download</option>
+                        <option value="icon-emoji-flirt">&#xe640; emoji-flirt</option>
+                        <option value="icon-flow-branch">&#xe641; flow-branch</option>
+                        <option value="icon-flow-cascade">&#xe642; flow-cascade</option>
+                        <option value="icon-flow-line">&#xe643; flow-line</option>
+                        <option value="icon-flow-parallel">&#xe644; flow-parallel</option>
+                        <option value="icon-flow-tree">&#xe645; flow-tree</option>
+                        <option value="icon-install">&#xe646; install</option>
+                        <option value="icon-layers">&#xe647; layers</option>
+                        <option value="icon-open-book">&#xe648; open-book</option>
+                        <option value="icon-resize-100">&#xe649; resize-100</option>
+                        <option value="icon-resize-full-screen">&#xe64a; resize-full-screen</option>
+                        <option value="icon-save">&#xe64b; save</option>
+                        <option value="icon-select-arrows">&#xe64c; select-arrows</option>
+                        <option value="icon-sound-mute">&#xe64d; sound-mute</option>
+                        <option value="icon-sound">&#xe64e; sound</option>
+                        <option value="icon-trash">&#xe64f; trash</option>
+                        <option value="icon-triangle-down">&#xe650; triangle-down</option>
+                        <option value="icon-triangle-left">&#xe651; triangle-left</option>
+                        <option value="icon-triangle-right">&#xe652; triangle-right</option>
+                        <option value="icon-triangle-up">&#xe653; triangle-up</option>
+                        <option value="icon-uninstall">&#xe654; uninstall</option>
+                        <option value="icon-upload-to-cloud">&#xe655; upload-to-cloud</option>
+                        <option value="icon-upload">&#xe656; upload</option>
+                        <option value="icon-add-user">&#xe657; add-user</option>
+                        <option value="icon-address">&#xe658; address</option>
+                        <option value="icon-adjust">&#xe659; adjust</option>
+                        <option value="icon-air">&#xe65a; air</option>
+                        <option value="icon-aircraft-landing">&#xe65b; aircraft-landing</option>
+                        <option value="icon-aircraft-take-off">&#xe65c; aircraft-take-off</option>
+                        <option value="icon-aircraft">&#xe65d; aircraft</option>
+                        <option value="icon-align-bottom">&#xe65e; align-bottom</option>
+                        <option value="icon-align-horizontal-middle">&#xe65f; align-horizontal-middle</option>
+                        <option value="icon-align-left">&#xe660; align-left</option>
+                        <option value="icon-align-right">&#xe661; align-right</option>
+                        <option value="icon-align-top">&#xe662; align-top</option>
+                        <option value="icon-align-vertical-middle">&#xe663; align-vertical-middle</option>
+                        <option value="icon-archive">&#xe664; archive</option>
+                        <option value="icon-area-graph">&#xe665; area-graph</option>
+                        <option value="icon-attachment">&#xe666; attachment</option>
+                        <option value="icon-awareness-ribbon">&#xe667; awareness-ribbon</option>
+                        <option value="icon-back-in-time">&#xe668; back-in-time</option>
+                        <option value="icon-back">&#xe669; back</option>
+                        <option value="icon-bar-graph">&#xe66a; bar-graph</option>
+                        <option value="icon-battery">&#xe66b; battery</option>
+                        <option value="icon-beamed-note">&#xe66c; beamed-note</option>
+                        <option value="icon-bell">&#xe66d; bell</option>
+                        <option value="icon-blackboard">&#xe66e; blackboard</option>
+                        <option value="icon-block">&#xe66f; block</option>
+                        <option value="icon-book">&#xe670; book</option>
+                        <option value="icon-bowl">&#xe671; bowl</option>
+                        <option value="icon-box">&#xe672; box</option>
+                        <option value="icon-briefcase">&#xe673; briefcase</option>
+                        <option value="icon-browser">&#xe674; browser</option>
+                        <option value="icon-brush">&#xe675; brush</option>
+                        <option value="icon-bucket">&#xe676; bucket</option>
+                        <option value="icon-cake">&#xe677; cake</option>
+                        <option value="icon-calculator">&#xe678; calculator</option>
+                        <option value="icon-calendar">&#xe679; calendar</option>
+                        <option value="icon-camera">&#xe67a; camera</option>
+                        <option value="icon-ccw">&#xe67b; ccw</option>
+                        <option value="icon-chat">&#xe67c; chat</option>
+                        <option value="icon-check2">&#xe67d; check2</option>
+                        <option value="icon-circle-with-cross">&#xe67e; circle-with-cross</option>
+                        <option value="icon-circle-with-minus">&#xe67f; circle-with-minus</option>
+                        <option value="icon-circle-with-plus">&#xe680; circle-with-plus</option>
+                        <option value="icon-circle">&#xe681; circle</option>
+                        <option value="icon-circular-graph">&#xe682; circular-graph</option>
+                        <option value="icon-clapperboard">&#xe683; clapperboard</option>
+                        <option value="icon-clipboard">&#xe684; clipboard</option>
+                        <option value="icon-clock">&#xe685; clock</option>
+                        <option value="icon-code">&#xe686; code</option>
+                        <option value="icon-cog">&#xe687; cog</option>
+						<option value="icon-colours">&#xe688; colours</option>
+                        <option value="icon-compass">&#xe689; compass</option>
+                        <option value="icon-copy">&#xe68a; copy</option>
+                        <option value="icon-credit-card">&#xe68b; credit-card</option>
+                        <option value="icon-credit">&#xe68c; credit</option>
+                        <option value="icon-cross">&#xe68d; cross</option>
+                        <option value="icon-cup">&#xe68e; cup</option>
+                        <option value="icon-cw">&#xe68f; cw</option>
+                        <option value="icon-cycle">&#xe690; cycle</option>
+                        <option value="icon-database">&#xe691; database</option>
+                        <option value="icon-dial-pad">&#xe692; dial-pad</option>
+                        <option value="icon-direction">&#xe693; direction</option>
+                        <option value="icon-document">&#xe694; document</option>
+                        <option value="icon-documents">&#xe695; documents</option>
+                        <option value="icon-drink">&#xe696; drink</option>
+                        <option value="icon-drive">&#xe697; drive</option>
+                        <option value="icon-drop">&#xe698; drop</option>
+                        <option value="icon-edit">&#xe699; edit</option>
+                        <option value="icon-email">&#xe69a; email</option>
+                        <option value="icon-emoji-happy">&#xe69b; emoji-happy</option>
+                        <option value="icon-emoji-neutral">&#xe69c; emoji-neutral</option>
+                        <option value="icon-emoji-sad">&#xe69d; emoji-sad</option>
+                        <option value="icon-erase">&#xe69e; erase</option>
+                        <option value="icon-eraser">&#xe69f; eraser</option>
+                        <option value="icon-export">&#xe6a0; export</option>
+                        <option value="icon-eye">&#xe6a1; eye</option>
+                        <option value="icon-feather">&#xe6a2; feather</option>
+                        <option value="icon-flag">&#xe6a3; flag</option>
+                        <option value="icon-flash">&#xe6a4; flash</option>
+                        <option value="icon-flashlight">&#xe6a5; flashlight</option>
+                        <option value="icon-flat-brush">&#xe6a6; flat-brush</option>
+                        <option value="icon-folder-images">&#xe6a7; folder-images</option>
+                        <option value="icon-folder-music">&#xe6a8; folder-music</option>
+                        <option value="icon-folder-video">&#xe6a9; folder-video</option>
+                        <option value="icon-folder">&#xe6aa; folder</option>
+                        <option value="icon-forward">&#xe6ab; forward</option>
+                        <option value="icon-funnel">&#xe6ac; funnel</option>
+                        <option value="icon-game-controller">&#xe6ad; game-controller</option>
+                        <option value="icon-gauge">&#xe6ae; gauge</option>
+                        <option value="icon-globe">&#xe6af; globe</option>
+                        <option value="icon-graduation-cap">&#xe6b0; graduation-cap</option>
+                        <option value="icon-grid">&#xe6b1; grid</option>
+                        <option value="icon-hair-cross">&#xe6b2; hair-cross</option>
+                        <option value="icon-hand">&#xe6b3; hand</option>
+                        <option value="icon-heart-outlined">&#xe6b4; heart-outlined</option>
+                        <option value="icon-heart">&#xe6b5; heart</option>
+                        <option value="icon-help-with-circle">&#xe6b6; help-with-circle</option>
+                        <option value="icon-help">&#xe6b7; help</option>
+                        <option value="icon-home">&#xe6b8; home</option>
+                        <option value="icon-hour-glass">&#xe6b9; hour-glass</option>
+                        <option value="icon-image-inverted">&#xe6ba; image-inverted</option>
+                        <option value="icon-image">&#xe6bb; image</option>
+                        <option value="icon-images">&#xe6bc; images</option>
+                        <option value="icon-inbox">&#xe6bd; inbox</option>
+                        <option value="icon-infinity">&#xe6be; infinity</option>
+                        <option value="icon-info-with-circle">&#xe6bf; info-with-circle</option>
+                        <option value="icon-info">&#xe6c0; info</option>
+                        <option value="icon-key">&#xe6c1; key</option>
+                        <option value="icon-keyboard">&#xe6c2; keyboard</option>
+                        <option value="icon-lab-flask">&#xe6c3; lab-flask</option>
+                        <option value="icon-landline">&#xe6c4; landline</option>
+                        <option value="icon-language">&#xe6c5; language</option>
+                        <option value="icon-laptop">&#xe6c6; laptop</option>
+                        <option value="icon-leaf">&#xe6c7; leaf</option>
+                        <option value="icon-level-down">&#xe6c8; level-down</option>
+                        <option value="icon-level-up">&#xe6c9; level-up</option>
+                        <option value="icon-lifebuoy">&#xe6ca; lifebuoy</option>
+                        <option value="icon-light-bulb">&#xe6cb; light-bulb</option>
+                        <option value="icon-light-down">&#xe6cc; light-down</option>
+                        <option value="icon-light-up">&#xe6cd; light-up</option>
+                        <option value="icon-line-graph">&#xe6ce; line-graph</option>
+                        <option value="icon-link">&#xe6cf; link</option>
+                        <option value="icon-list">&#xe6d0; list</option>
+                        <option value="icon-location-pin">&#xe6d1; location-pin</option>
+                        <option value="icon-location">&#xe6d2; location</option>
+                        <option value="icon-lock-open">&#xe6d3; lock-open</option>
+                        <option value="icon-lock">&#xe6d4; lock</option>
+                        <option value="icon-log-out">&#xe6d5; log-out</option>
+                        <option value="icon-login">&#xe6d6; login</option>
+                        <option value="icon-loop">&#xe6d7; loop</option>
+                        <option value="icon-magnet">&#xe6d8; magnet</option>
+                        <option value="icon-magnifying-glass">&#xe6d9; magnifying-glass</option>
+                        <option value="icon-mail">&#xe6da; mail</option>
+                        <option value="icon-man">&#xe6db; man</option>
+                        <option value="icon-map">&#xe6dc; map</option>
+                        <option value="icon-mask">&#xe6dd; mask</option>
+                        <option value="icon-medal">&#xe6de; medal</option>
+                        <option value="icon-megaphone">&#xe6df; megaphone</option>
+                        <option value="icon-menu">&#xe6e0; menu</option>
+                        <option value="icon-message">&#xe6e1; message</option>
+                        <option value="icon-mic">&#xe6e2; mic</option>
+                        <option value="icon-minus">&#xe6e3; minus</option>
+                        <option value="icon-mobile">&#xe6e4; mobile</option>
+                        <option value="icon-modern-mic">&#xe6e5; modern-mic</option>
+                        <option value="icon-moon">&#xe6e6; moon</option>
+                        <option value="icon-mouse">&#xe6e7; mouse</option>
+                        <option value="icon-music">&#xe6e8; music</option>
+                        <option value="icon-network">&#xe6e9; network</option>
+                        <option value="icon-new-message">&#xe6ea; new-message</option>
+                        <option value="icon-new">&#xe6eb; new</option>
+                        <option value="icon-news">&#xe6ec; news</option>
+                        <option value="icon-note">&#xe6ed; note</option>
+                        <option value="icon-notification">&#xe6ee; notification</option>
+                        <option value="icon-old-mobile">&#xe6ef; old-mobile</option>
+                        <option value="icon-old-phone">&#xe6f0; old-phone</option>
+                        <option value="icon-palette">&#xe6f1; palette</option>
+                        <option value="icon-paper-plane">&#xe6f2; paper-plane</option>
+                        <option value="icon-pencil">&#xe6f3; pencil</option>
+                        <option value="icon-phone">&#xe6f4; phone</option>
+                        <option value="icon-pie-chart">&#xe6f5; pie-chart</option>
+                        <option value="icon-pin">&#xe6f6; pin</option>
+                        <option value="icon-plus">&#xe6f7; plus</option>
+                        <option value="icon-popup">&#xe6f8; popup</option>
+                        <option value="icon-power-plug">&#xe6f9; power-plug</option>
+                        <option value="icon-price-ribbon">&#xe6fa; price-ribbon</option>
+                        <option value="icon-price-tag">&#xe6fb; price-tag</option>
+                        <option value="icon-print">&#xe6fc; print</option>
+                        <option value="icon-progress-empty">&#xe6fd; progress-empty</option>
+                        <option value="icon-progress-full">&#xe6fe; progress-full</option>
+                        <option value="icon-progress-one">&#xe6ff; progress-one</option>
+                        <option value="icon-progress-two">&#xe700; progress-two</option>
+                        <option value="icon-publish">&#xe701; publish</option>
+                        <option value="icon-quote">&#xe702; quote</option>
+                        <option value="icon-radio">&#xe703; radio</option>
+                        <option value="icon-reply-all">&#xe704; reply-all</option>
+                        <option value="icon-reply">&#xe705; reply</option>
+                        <option value="icon-retweet">&#xe706; retweet</option>
+                        <option value="icon-rocket">&#xe707; rocket</option>
+                        <option value="icon-round-brush">&#xe708; round-brush</option>
+                        <option value="icon-rss">&#xe709; rss</option>
+                        <option value="icon-ruler">&#xe70a; ruler</option>
+                        <option value="icon-scissors">&#xe70b; scissors</option>
+                        <option value="icon-share-alternitive">&#xe70c; share-alternitive</option>
+                        <option value="icon-share">&#xe70d; share</option>
+                        <option value="icon-shareable">&#xe70e; shareable</option>
+                        <option value="icon-shield">&#xe70f; shield</option>
+                        <option value="icon-shop">&#xe710; shop</option>
+                        <option value="icon-shopping-bag">&#xe711; shopping-bag</option>
+                        <option value="icon-shopping-basket">&#xe712; shopping-basket</option>
+                        <option value="icon-shopping-cart">&#xe713; shopping-cart</option>
+                        <option value="icon-shuffle">&#xe714; shuffle</option>
+                        <option value="icon-signal">&#xe715; signal</option>
+                        <option value="icon-sound-mix">&#xe716; sound-mix</option>
+                        <option value="icon-sports-club">&#xe717; sports-club</option>
+                        <option value="icon-spreadsheet">&#xe718; spreadsheet</option>
+                        <option value="icon-squared-cross">&#xe719; squared-cross</option>
+                        <option value="icon-squared-minus">&#xe71a; squared-minus</option>
+                        <option value="icon-squared-plus">&#xe71b; squared-plus</option>
+                        <option value="icon-star-outlined">&#xe71c; star-outlined</option>
+                        <option value="icon-star">&#xe71d; star</option>
+                        <option value="icon-stopwatch">&#xe71e; stopwatch</option>
+                        <option value="icon-suitcase">&#xe71f; suitcase</option>
+                        <option value="icon-swap">&#xe720; swap</option>
+                        <option value="icon-sweden">&#xe721; sweden</option>
+                        <option value="icon-switch">&#xe722; switch</option>
+                        <option value="icon-tablet">&#xe723; tablet</option>
+                        <option value="icon-tag">&#xe724; tag</option>
+                        <option value="icon-text-document-inverted">&#xe725; text-document-inverted</option>
+                        <option value="icon-text-document">&#xe726; text-document</option>
+                        <option value="icon-text">&#xe727; text</option>
+                        <option value="icon-thermometer">&#xe728; thermometer</option>
+                        <option value="icon-thumbs-down">&#xe729; thumbs-down</option>
+                        <option value="icon-thumbs-up">&#xe72a; thumbs-up</option>
+                        <option value="icon-thunder-cloud">&#xe72b; thunder-cloud</option>
+                        <option value="icon-ticket">&#xe72c; ticket</option>
+                        <option value="icon-time-slot">&#xe72d; time-slot</option>
+                        <option value="icon-tools">&#xe72e; tools</option>
+                        <option value="icon-traffic-cone">&#xe72f; traffic-cone</option>
+                        <option value="icon-tree">&#xe730; tree</option>
+                        <option value="icon-trophy">&#xe731; trophy</option>
+                        <option value="icon-tv">&#xe732; tv</option>
+                        <option value="icon-typing">&#xe733; typing</option>
+                        <option value="icon-unread">&#xe734; unread</option>
+                        <option value="icon-untag">&#xe735; untag</option>
+                        <option value="icon-user">&#xe736; user</option>
+                        <option value="icon-users">&#xe737; users</option>
+                        <option value="icon-v-card">&#xe738; v-card</option>
+                        <option value="icon-video">&#xe739; video</option>
+                        <option value="icon-vinyl">&#xe73a; vinyl</option>
+                        <option value="icon-voicemail">&#xe73b; voicemail</option>
+                        <option value="icon-wallet">&#xe73c; wallet</option>
+                        <option value="icon-water">&#xe73d; water</option>
+                        <option value="icon-500px-with-circle">&#xe73e; 500px-with-circle</option>
+                        <option value="icon-500px">&#xe73f; 500px</option>
+                        <option value="icon-basecamp">&#xe740; basecamp</option>
+                        <option value="icon-behance">&#xe741; behance</option>
+                        <option value="icon-creative-cloud">&#xe742; creative-cloud</option>
+                        <option value="icon-dropbox">&#xe743; dropbox</option>
+                        <option value="icon-evernote">&#xe744; evernote</option>
+                        <option value="icon-flattr">&#xe745; flattr</option>
+                        <option value="icon-foursquare">&#xe746; foursquare</option>
+                        <option value="icon-google-drive">&#xe747; google-drive</option>
+                        <option value="icon-google-hangouts">&#xe748; google-hangouts</option>
+                        <option value="icon-grooveshark">&#xe749; grooveshark</option>
+                        <option value="icon-icloud">&#xe74a; icloud</option>
+                        <option value="icon-mixi">&#xe74b; mixi</option>
+                        <option value="icon-onedrive">&#xe74c; onedrive</option>
+                        <option value="icon-paypal">&#xe74d; paypal</option>
+                        <option value="icon-picasa">&#xe74e; picasa</option>
+                        <option value="icon-qq">&#xe74f; qq</option>
+                        <option value="icon-rdio-with-circle">&#xe750; rdio-with-circle</option>
+                        <option value="icon-renren">&#xe751; renren</option>
+                        <option value="icon-scribd">&#xe752; scribd</option>
+                        <option value="icon-sina-weibo">&#xe753; sina-weibo</option>
+                        <option value="icon-skype-with-circle">&#xe754; skype-with-circle</option>
+                        <option value="icon-skype">&#xe755; skype</option>
+                        <option value="icon-slideshare">&#xe756; slideshare</option>
+                        <option value="icon-smashing">&#xe757; smashing</option>
+                        <option value="icon-soundcloud">&#xe758; soundcloud</option>
+                        <option value="icon-spotify-with-circle">&#xe759; spotify-with-circle</option>
+                        <option value="icon-spotify">&#xe75a; spotify</option>
+                        <option value="icon-swarm">&#xe75b; swarm</option>
+                        <option value="icon-vine-with-circle">&#xe75c; vine-with-circle</option>
+                        <option value="icon-vine">&#xe75d; vine</option>
+                        <option value="icon-vk-alternitive">&#xe75e; vk-alternitive</option>
+                        <option value="icon-vk-with-circle">&#xe75f; vk-with-circle</option>
+                        <option value="icon-vk">&#xe760; vk</option>
+                        <option value="icon-xing-with-circle">&#xe761; xing-with-circle</option>
+                        <option value="icon-xing">&#xe762; xing</option>
+                        <option value="icon-yelp">&#xe763; yelp</option>
+                        <option value="icon-dribbble-with-circle">&#xe764; dribbble-with-circle</option>
+                        <option value="icon-dribbble">&#xe765; dribbble</option>
+                        <option value="icon-facebook-with-circle">&#xe766; facebook-with-circle</option>
+                        <option value="icon-facebook">&#xe767; facebook</option>
+                        <option value="icon-flickr-with-circle">&#xe768; flickr-with-circle</option>
+                        <option value="icon-flickr">&#xe769; flickr</option>
+                        <option value="icon-github-with-circle">&#xe76a; github-with-circle</option>
+                        <option value="icon-github">&#xe76b; github</option>
+                        <option value="icon-google-with-circle">&#xe76c; google-with-circle</option>
+                        <option value="icon-google">&#xe76d; google</option>
+                        <option value="icon-instagram-with-circle">&#xe76e; instagram-with-circle</option>
+                        <option value="icon-instagram">&#xe76f; instagram</option>
+                        <option value="icon-lastfm-with-circle">&#xe770; lastfm-with-circle</option>
+                        <option value="icon-lastfm">&#xe771; lastfm</option>
+                        <option value="icon-linkedin-with-circle">&#xe772; linkedin-with-circle</option>
+                        <option value="icon-linkedin">&#xe773; linkedin</option>
+                        <option value="icon-pinterest-with-circle">&#xe774; pinterest-with-circle</option>
+                        <option value="icon-pinteres">&#xe775; pinterest</option>
+                        <option value="icon-rdio">&#xe776; rdio</option>
+                        <option value="icon-stumbleupon-with-circle">&#xe777; stumbleupon-with-circle</option>
+                        <option value="icon-stumbleupon">&#xe778; stumbleupon</option>
+                        <option value="icon-tumblr-with-circle">&#xe779; tumblr-with-circle</option>
+                        <option value="icon-tumblr">&#xe77a; tumblr</option>
+                        <option value="icon-twitter-with-circle">&#xe77b; twitter-with-circle</option>
+                        <option value="icon-twitter">&#xe77c; twitter</option>
+                        <option value="icon-vimeo-with-circle">&#xe77d; vimeo-with-circle</option>
+                        <option value="icon-vimeo">&#xe77e; vimeo</option>
+                        <option value="icon-youtube-with-circle">&#xe77f; youtube-with-circle</option>
+                        <option value="icon-youtube">&#xe780; youtube</option>
+                        <option value="icon-mobile4">&#xe00a; mobile4</option>
+                        <option value="icon-laptop3">&#xe00b; laptop3</option>
+                        <option value="icon-desktop">&#xe00c; desktop</option>
+                        <option value="icon-tablet3">&#xe00d; tablet3</option>
+                        <option value="icon-phone3">&#xe00e; phone3</option>
+                        <option value="icon-document2">&#xe00f; document2</option>
+                        <option value="icon-documents2">&#xe01a; documents2</option>
+                        <option value="icon-search3">&#xe01b; search3</option>
+                        <option value="icon-clipboard4">&#xe01c; clipboard4</option>
+                        <option value="icon-newspaper2">&#xe01d; newspaper2</option>
+                        <option value="icon-notebook">&#xe01e; notebook</option>
+                        <option value="icon-book-open">&#xe01f; book-open</option>
+                        <option value="icon-browser2">&#xe02a; browser2</option>
+                        <option value="icon-calendar3">&#xe02b; calendar3</option>
+                        <option value="icon-presentation">&#xe02c; presentation</option>
+                        <option value="icon-picture">&#xe02d; picture</option>
+                        <option value="icon-pictures">&#xe02e; pictures</option>
+                        <option value="icon-video3">&#xe02f; video3</option>
+                        <option value="icon-camera4">&#xe03a; camera4</option>
+                        <option value="icon-printer3">&#xe03b; printer3</option>
+                        <option value="icon-toolbox">&#xe03c; toolbox</option>
+                        <option value="icon-briefcase4">&#xe03d; briefcase4</option>
+                        <option value="icon-wallet2">&#xe03e; wallet2</option>
+                        <option value="icon-gift2">&#xe03f; gift2</option>
+                        <option value="icon-bargraph">&#xe04a; bargraph</option>
+                        <option value="icon-grid3">&#xe04b; grid3</option>
+                        <option value="icon-expand2">&#xe04c; expand2</option>
+                        <option value="icon-focus">&#xe04d; focus</option>
+                        <option value="icon-edit2">&#xe04e; edit2</option>
+                        <option value="icon-adjustments">&#xe04f; adjustments</option>
+                        <option value="icon-ribbon2">&#xe05a; ribbon2</option>
+                        <option value="icon-hourglass">&#xe05b; hourglass</option>
+                        <option value="icon-lock4">&#xe05c; lock4</option>
+                        <option value="icon-megaphone2">&#xe05d; megaphone2</option>
+                        <option value="icon-shield3">&#xe05e; shield3</option>
+                        <option value="icon-trophy3">&#xe05f; trophy3</option>
+                        <option value="icon-flag4">&#xe06a; flag4</option>
+                        <option value="icon-map5">&#xe06b; map5</option>
+                        <option value="icon-puzzle">&#xe06c; puzzle</option>
+                        <option value="icon-basket">&#xe06d; basket</option>
+                        <option value="icon-envelope">&#xe06e; envelope</option>
+                        <option value="icon-streetsign">&#xe06f; streetsign</option>
+                        <option value="icon-telescope">&#xe07a; telescope</option>
+                        <option value="icon-gears">&#xe07b; gears</option>
+                        <option value="icon-key4">&#xe07c; key4</option>
+                        <option value="icon-paperclip">&#xe07d; paperclip</option>
+                        <option value="icon-attachment3">&#xe07e; attachment3</option>
+                        <option value="icon-pricetags">&#xe07f; pricetags</option>
+                        <option value="icon-lightbulb">&#xe08a; lightbulb</option>
+                        <option value="icon-layers3">&#xe08b; layers3</option>
+                        <option value="icon-pencil4">&#xe08c; pencil4</option>
+                        <option value="icon-tools2">&#xe08d; tools2</option>
+                        <option value="icon-tools-2">&#xe08e; tools-2</option>
+                        <option value="icon-scissors3">&#xe08f; scissors3</option>
+                        <option value="icon-paintbrush">&#xe09a; paintbrush</option>
+                        <option value="icon-magnifying-glass2">&#xe09b; magnifying-glass2</option>
+                        <option value="icon-circle-compass">&#xe09c; circle-compass</option>
+                        <option value="icon-linegraph">&#xe09d; linegraph</option>
+                        <option value="icon-mic3">&#xe09e; mic3</option>
+                        <option value="icon-strategy">&#xe09f; strategy</option>
+                        <option value="icon-strategy">&#xe0a0; strategy</option>
+                        <option value="icon-caution">&#xe0a1; caution</option>
+                        <option value="icon-recycle">&#xe0a2; recycle</option>
+                        <option value="icon-anchor2">&#xe0a3; anchor2</option>
+                        <option value="icon-profile-male">&#xe0a4; profile-male</option>
+                        <option value="icon-profile-female">&#xe0a5; profile-female</option>
+                        <option value="icon-bike">&#xe0a6; bike</option>
+                        <option value="icon-wine">&#xe0a7; wine</option>
+                        <option value="icon-hotairballoon">&#xe0a8; hotairballoon</option>
+                        <option value="icon-globe3">&#xe0a9; globe3</option>
+                        <option value="icon-genius">&#xe0aa; genius</option>
+                        <option value="icon-map-pin">&#xe0ab; map-pin</option>
+                        <option value="icon-dial">&#xe0ac; dial</option>
+                        <option value="icon-chat2">&#xe0ad; chat2</option>
+                        <option value="icon-heart4">&#xe0ae; heart4</option>
+                        <option value="icon-cloud4">&#xe0af; cloud4</option>
+                        <option value="icon-upload6">&#xe0b0; upload6</option>
+                        <option value="icon-download6">&#xe0b1; download6</option>
+                        <option value="icon-target3">&#xe0b2; target3</option>
+                        <option value="icon-hazardous">&#xe0b3; hazardous</option>
+                        <option value="icon-piechart">&#xe0b4; piechart</option>
+                        <option value="icon-speedometer">&#xe0b5; speedometer</option>
+                        <option value="icon-global">&#xe0b6; global</option>
+                        <option value="icon-compass4">&#xe0b7; compass4</option>
+                        <option value="icon-lifesaver">&#xe0b8; lifesaver</option>
+                        <option value="icon-clock5">&#xe0b9; clock5</option>
+                        <option value="icon-aperture">&#xe0ba; aperture</option>
+                        <option value="icon-quote2">&#xe0bb; quote2</option>
+                        <option value="icon-scope">&#xe0bc; scope</option>
+                        <option value="icon-alarmclock">&#xe0bd; alarmclock</option>
+                        <option value="icon-refresh">&#xe0be; refresh</option>
+                        <option value="icon-happy3">&#xe0bf; happy3</option>
+                        <option value="icon-sad3">&#xe0c0; sad3</option>
+                        <option value="icon-facebook4">&#xe0c1; facebook4</option>
+                        <option value="icon-twitter4">&#xe0c2; twitter4</option>
+                        <option value="icon-googleplus">&#xe0c3; googleplus</option>
+                        <option value="icon-rss2">&#xe0c4; rss2</option>
+                        <option value="icon-tumblr4">&#xe0c5; tumblr4</option>
+                        <option value="icon-linkedin4">&#xe0c6; linkedin4</option>
+                        <option value="icon-dribbble5">&#xe0c7; dribbble5</option>
+                        <option value="icon-eye2">&#xe000; eye2</option>
+                        <option value="icon-paper-clip">&#xe001; paper-clip</option>
+                        <option value="icon-mail5">&#xe002; mail5</option>
+                        <option value="icon-toggle">&#xe003; toggle</option>
+                        <option value="icon-layout">&#xe004; layout</option>
+                        <option value="icon-link3">&#xe005; link3</option>
+                        <option value="icon-bell2">&#xe006; bell2</option>
+                        <option value="icon-lock2">&#xe007; lock2</option>
+                        <option value="icon-unlock">&#xe008; unlock</option>
+                        <option value="icon-ribbon">&#xe009; ribbon</option>
+                        <option value="icon-image2">&#xe010; image2</option>
+                        <option value="icon-signal2">&#xe011; signal2</option>
+                        <option value="icon-target">&#xe012; target</option>
+                        <option value="icon-clipboard2">&#xe013; clipboard2</option>
+                        <option value="icon-clock3">&#xe014; clock3</option>
+                        <option value="icon-watch">&#xe015; watch</option>
+                        <option value="icon-air-play">&#xe016; air-play</option>
+                        <option value="icon-camera2">&#xe017; camera2</option>
+                        <option value="icon-video2">&#xe018; video2</option>
+                        <option value="icon-disc">&#xe019; disc</option>
+                        <option value="icon-printer">&#xe020; printer</option>
+                        <option value="icon-monitor">&#xe021; monitor</option>
+                        <option value="icon-server">&#xe022; server</option>
+                        <option value="icon-cog2">&#xe023; cog2</option>
+                        <option value="icon-heart2">&#xe024; heart2</option>
+                        <option value="icon-paragraph">&#xe025; paragraph</option>
+                        <option value="icon-align-justify">&#xe026; align-justify</option>
+                        <option value="icon-align-left2">&#xe027; align-left2</option>
+                        <option value="icon-align-center">&#xe028; align-center</option>
+                        <option value="icon-align-right2">&#xe029; align-right2</option>
+                        <option value="icon-book2">&#xe030; book2</option>
+                        <option value="icon-layers2">&#xe031; layers2</option>
+                        <option value="icon-stack">&#xe032; stack</option>
+                        <option value="icon-stack-2">&#xe033; stack-2</option>
+                        <option value="icon-paper">&#xe034; paper</option>
+                        <option value="icon-paper-stack">&#xe035; paper-stack</option>
+                        <option value="icon-search">&#xe036; search</option>
+                        <option value="icon-zoom-in">&#xe037; zoom-in</option>
+                        <option value="icon-zoom-out">&#xe038; zoom-out</option>
+                        <option value="icon-reply2">&#xe039; reply2</option>
+                        <option value="icon-circle-plus">&#xe040; circle-plus</option>
+                        <option value="icon-circle-minus">&#xe041; circle-minus</option>
+                        <option value="icon-circle-check">&#xe042; circle-check</option>
+                        <option value="icon-circle-cross">&#xe043; circle-cross</option>
+                        <option value="icon-square-plus">&#xe044; square-plus</option>
+                        <option value="icon-square-minus">&#xe045; square-minus</option>
+                        <option value="icon-square-check">&#xe046; square-check</option>
+                        <option value="icon-square-cross">&#xe047; square-cross</option>
+                        <option value="icon-microphone">&#xe048; microphone</option>
+                        <option value="icon-record">&#xe049; record</option>
+                        <option value="icon-skip-back">&#xe050; skip-back</option>
+                        <option value="icon-rewind">&#xe051; rewind</option>
+                        <option value="icon-play">&#xe052; play</option>
+                        <option value="icon-pause">&#xe053; pause</option>
+                        <option value="icon-stop">&#xe054; stop</option>
+                        <option value="icon-fast-forward">&#xe055; fast-forward</option>
+                        <option value="icon-skip-forward">&#xe056; skip-forward</option>
+                        <option value="icon-shuffle2">&#xe057; shuffle2</option>
+                        <option value="icon-repeat">&#xe058; repeat</option>
+                        <option value="icon-folder2">&#xe059; folder2</option>
+                        <option value="icon-umbrella">&#xe060; umbrella</option>
+                        <option value="icon-moon2">&#xe061; moon2</option>
+                        <option value="icon-thermometer2">&#xe062; thermometer2</option>
+                        <option value="icon-drop2">&#xe063; drop2</option>
+                        <option value="icon-sun">&#xe064; sun</option>
+                        <option value="icon-cloud2">&#xe065; cloud2</option>
+                        <option value="icon-cloud-upload">&#xe066; cloud-upload</option>
+                        <option value="icon-cloud-download">&#xe067; cloud-download</option>
+                        <option value="icon-upload4">&#xe068; upload4</option>
+                        <option value="icon-download4">&#xe069; download4</option>
+                        <option value="icon-location3">&#xe070; location3</option>
+                        <option value="icon-location-2">&#xe071; location-2</option>
+                        <option value="icon-map3">&#xe072; map3</option>
+                        <option value="icon-battery2">&#xe073; battery2</option>
+                        <option value="icon-head">&#xe074; head</option>
+                        <option value="icon-briefcase2">&#xe075; briefcase2</option>
+                        <option value="icon-speech-bubble">&#xe076; speech-bubble</option>
+                        <option value="icon-anchor">&#xe077; anchor</option>
+                        <option value="icon-globe2">&#xe078; globe2</option>
+                        <option value="icon-box2">&#xe079; box2</option>
+                        <option value="icon-reload">&#xe080; reload</option>
+                        <option value="icon-share3">&#xe081; share3</option>
+                        <option value="icon-marquee">&#xe082; marquee</option>
+                        <option value="icon-marquee-plus">&#xe083; marquee-plus</option>
+                        <option value="icon-marquee-minus">&#xe084; marquee-minus</option>
+                        <option value="icon-tag2">&#xe085; tag2</option>
+                        <option value="icon-power">&#xe086; power</option>
+                        <option value="icon-command">&#xe087; command</option>
+                        <option value="icon-alt">&#xe088; alt</option>
+                        <option value="icon-esc">&#xe089; esc</option>
+                        <option value="icon-bar-graph2">&#xe090; bar-graph2</option>
+                        <option value="icon-bar-graph-2">&#xe091; bar-graph-2</option>
+                        <option value="icon-pie-graph">&#xe092; pie-graph</option>
+                        <option value="icon-star2">&#xe093; star2</option>
+                        <option value="icon-arrow-left3">&#xe094; arrow-left3</option>
+                        <option value="icon-arrow-right3">&#xe095; arrow-right3</option>
+                        <option value="icon-arrow-up3">&#xe096; arrow-up3</option>
+                        <option value="icon-arrow-down3">&#xe097; arrow-down3</option>
+                        <option value="icon-volume">&#xe098; volume</option>
+                        <option value="icon-mute">&#xe099; mute</option>
+                        <option value="icon-content-right">&#xe100; content-right</option>
+                        <option value="icon-content-left">&#xe101; content-left</option>
+                        <option value="icon-grid2">&#xe102; grid2</option>
+                        <option value="icon-grid-2">&#xe103; grid-2</option>
+                        <option value="icon-columns">&#xe104; columns</option>
+                        <option value="icon-loader">&#xe105; loader</option>
+                        <option value="icon-bag">&#xe106; bag</option>
+                        <option value="icon-ban">&#xe107; ban</option>
+                        <option value="icon-flag2">&#xe108; flag2</option>
+                        <option value="icon-trash2">&#xe109; trash2</option>
+                        <option value="icon-expand">&#xe110; expand</option>
+                        <option value="icon-contract">&#xe111; contract</option>
+                        <option value="icon-maximize">&#xe112; maximize</option>
+                        <option value="icon-minimize">&#xe113; minimize</option>
+                        <option value="icon-plus2">&#xe114; plus2</option>
+                        <option value="icon-minus2">&#xe115; minus2</option>
+                        <option value="icon-check">&#xe116; check</option>
+                        <option value="icon-cross2">&#xe117; cross2</option>
+                        <option value="icon-move">&#xe118; move</option>
+                        <option value="icon-delete">&#xe119; delete</option>
+                        <option value="icon-menu5">&#xe120; menu5</option>
+                        <option value="icon-archive2">&#xe121; archive2</option>
+                        <option value="icon-inbox2">&#xe122; inbox2</option>
+                        <option value="icon-outbox">&#xe123; outbox</option>
+                        <option value="icon-file">&#xe124; file</option>
+                        <option value="icon-file-add">&#xe125; file-add</option>
+                        <option value="icon-file-subtract">&#xe126; file-subtract</option>
+                        <option value="icon-help2">&#xe127; help2</option>
+                        <option value="icon-open">&#xe128; open</option>
+                        <option value="icon-ellipsis">&#xe129; ellipsis</option>
+                        <option value="icon-home4">&#xe900; home4</option>
+                        <option value="icon-home2">&#xe901; home2</option>
+                        <option value="icon-home3">&#xe902; home3</option>
+                        <option value="icon-office">&#xe903; office</option>
+                        <option value="icon-newspaper">&#xe904; newspaper</option>
+                        <option value="icon-pencil3">&#xe905; pencil3</option>
+                        <option value="icon-pencil2">&#xe906; pencil2</option>
+                        <option value="icon-quill">&#xe907; quill</option>
+                        <option value="icon-pen">&#xe908; pen</option>
+                        <option value="icon-blog">&#xe909; blog</option>
+                        <option value="icon-eyedropper">&#xe90a; eyedropper</option>
+                        <option value="icon-droplet">&#xe90b; droplet</option>
+                        <option value="icon-paint-format">&#xe90c; paint-format</option>
+                        <option value="icon-image3">&#xe90d; image3</option>
+                        <option value="icon-images2">&#xe90e; images2</option>
+                        <option value="icon-camera3">&#xe90f; camera3</option>
+                        <option value="icon-headphones">&#xe910; headphones</option>
+                        <option value="icon-music2">&#xe911; music2</option>
+                        <option value="icon-play4">&#xe912; play4</option>
+                        <option value="icon-film">&#xe913; film</option>
+                        <option value="icon-video-camera">&#xe914; video-camera</option>
+                        <option value="icon-dice">&#xe915; dice</option>
+                        <option value="icon-pacman">&#xe916; pacman</option>
+                        <option value="icon-spades">&#xe917; spades</option>
+                        <option value="icon-clubs">&#xe918; clubs</option>
+                        <option value="icon-diamonds">&#xe919; diamonds</option>
+                        <option value="icon-bullhorn">&#xe91a; bullhorn</option>
+                        <option value="icon-connection">&#xe91b; connection</option>
+                        <option value="icon-podcast">&#xe91c; podcast</option>
+                        <option value="icon-feed">&#xe91d; feed</option>
+                        <option value="icon-mic2">&#xe91e; mic2</option>
+                        <option value="icon-book3">&#xe91f; book3</option>
+                        <option value="icon-books">&#xe920; books</option>
+                        <option value="icon-library">&#xe921; library</option>
+                        <option value="icon-file-text">&#xe922; file-text</option>
+                        <option value="icon-profile">&#xe923; profile</option>
+                        <option value="icon-file-empty">&#xe924; file-empty</option>
+                        <option value="icon-files-empty">&#xe925; files-empty</option>
+                        <option value="icon-file-text2">&#xe926; file-text2</option>
+                        <option value="icon-file-picture">&#xe927; file-picture</option>
+                        <option value="icon-file-music">&#xe928; file-music</option>
+                        <option value="icon-file-play">&#xe929; file-play</option>
+                        <option value="icon-file-video">&#xe92a; file-video</option>
+                        <option value="icon-file-zip">&#xe92b; file-zip</option>
+                        <option value="icon-copy2">&#xe92c; copy2</option>
+                        <option value="icon-paste">&#xe92d; paste</option>
+                        <option value="icon-stack2">&#xe92e; stack2</option>
+                        <option value="icon-folder3">&#xe92f; folder3</option>
+                        <option value="icon-folder-open">&#xe930; folder-open</option>
+                        <option value="icon-folder-plus">&#xe931; folder-plus</option>
+                        <option value="icon-folder-minus">&#xe932; folder-minus</option>
+                        <option value="icon-folder-download">&#xe933; folder-download</option>
+                        <option value="icon-folder-upload">&#xe934; folder-upload</option>
+                        <option value="icon-price-tag2">&#xe935; price-tag2</option>
+                        <option value="icon-price-tags">&#xe936; price-tags</option>
+                        <option value="icon-barcode">&#xe937; barcode</option>
+                        <option value="icon-qrcode">&#xe938; qrcode</option>
+                        <option value="icon-ticket2">&#xe939; ticket2</option>
+                        <option value="icon-cart">&#xe93a; cart</option>
+                        <option value="icon-coin-dollar">&#xe93b; coin-dollar</option>
+                        <option value="icon-coin-euro">&#xe93c; coin-euro</option>
+                        <option value="icon-coin-pound">&#xe93d; coin-pound</option>
+                        <option value="icon-coin-yen">&#xe93e; coin-yen</option>
+                        <option value="icon-credit-card2">&#xe93f; credit-card2</option>
+                        <option value="icon-calculator2">&#xe940; calculator2</option>
+                        <option value="icon-lifebuoy2">&#xe941; lifebuoy2</option>
+                        <option value="icon-phone2">&#xe942; phone2</option>
+                        <option value="icon-phone-hang-up">&#xe943; phone-hang-up</option>
+                        <option value="icon-address-book">&#xe944; address-book</option>
+                        <option value="icon-envelop">&#xe945; envelop</option>
+                        <option value="icon-pushpin">&#xe946; pushpin</option>
+                        <option value="icon-location4">&#xe947; location4</option>
+                        <option value="icon-location2">&#xe948; location2</option>
+                        <option value="icon-compass3">&#xe949; compass3</option>
+                        <option value="icon-compass2">&#xe94a; compass2</option>
+                        <option value="icon-map4">&#xe94b; map4</option>
+                        <option value="icon-map2">&#xe94c; map2</option>
+                        <option value="icon-history">&#xe94d; history</option>
+                        <option value="icon-clock4">&#xe94e; clock4</option>
+                        <option value="icon-clock2">&#xe94f; clock2</option>
+                        <option value="icon-alarm">&#xe950; alarm</option>
+                        <option value="icon-bell3">&#xe951; bell3</option>
+                        <option value="icon-stopwatch2">&#xe952; stopwatch2</option>
+                        <option value="icon-calendar2">&#xe953; calendar2</option>
+                        <option value="icon-printer2">&#xe954; printer2</option>
+                        <option value="icon-keyboard2">&#xe955; keyboard2</option>
+                        <option value="icon-display">&#xe956; display</option>
+                        <option value="icon-laptop2">&#xe957; laptop2</option>
+                        <option value="icon-mobile3">&#xe958; mobile3</option>
+                        <option value="icon-mobile2">&#xe959; mobile2</option>
+                        <option value="icon-tablet2">&#xe95a;tablet2</option>
+                        <option value="icon-tv2">&#xe95b; tv2</option>
+                        <option value="icon-drawer">&#xe95c; drawer</option>
+                        <option value="icon-drawer2">&#xe95d; drawer2</option>
+                        <option value="icon-box-add">&#xe95e; box-add</option>
+                        <option value="icon-box-remove">&#xe95f; box-remove</option>
+                        <option value="icon-download5">&#xe960; download5</option>
+                        <option value="icon-upload5">&#xe961; upload5</option>
+                        <option value="icon-floppy-disk">&#xe962; floppy-disk</option>
+                        <option value="icon-drive2">&#xe963; drive2</option>
+                        <option value="icon-database2">&#xe964; database2</option>
+                        <option value="icon-undo">&#xe965; undo</option>
+                        <option value="icon-redo">&#xe966; redo</option>
+                        <option value="icon-undo2">&#xe967; undo2</option>
+                        <option value="icon-redo2">&#xe968; redo2</option>
+                        <option value="icon-forward4">&#xe969; forward4</option>
+                        <option value="icon-reply3">&#xe96a; reply3</option>
+                        <option value="icon-bubble">&#xe96b; bubble</option>
+                        <option value="icon-bubbles">&#xe96c; bubbles</option>
+                        <option value="icon-bubbles2">&#xe96d; bubbles2</option>
+                        <option value="icon-bubble2">&#xe96e; bubble2</option>
+                        <option value="icon-bubbles3">&#xe96f; bubbles3</option>
+                        <option value="icon-bubbles4">&#xe970; bubbles4</option>
+                        <option value="icon-user2">&#xe971; user2</option>
+                        <option value="icon-users2">&#xe972; users2</option>
+                        <option value="icon-user-plus">&#xe973; user-plus</option>
+                        <option value="icon-user-minus">&#xe974; user-minus</option>
+                        <option value="icon-user-check">&#xe975; user-check</option>
+                        <option value="icon-user-tie">&#xe976; user-tie</option>
+                        <option value="icon-quotes-left">&#xe977; quotes-left</option>
+                        <option value="icon-quotes-right">&#xe978; quotes-right</option>
+                        <option value="icon-hour-glass2">&#xe979; hour-glass2</option>
+                        <option value="icon-spinner">&#xe97a; spinner</option>
+                        <option value="icon-spinner2">&#xe97b; spinner2</option>
+                        <option value="icon-spinner3">&#xe97c; spinner3</option>
+                        <option value="icon-spinner4">&#xe97d; spinner4</option>
+                        <option value="icon-spinner5">&#xe97e; spinner5</option>
+                        <option value="icon-spinner6">&#xe97f; spinner6</option>
+                        <option value="icon-spinner7">&#xe980; spinner7</option>
+                        <option value="icon-spinner8">&#xe981; spinner8</option>
+                        <option value="icon-spinner9">&#xe982; spinner9</option>
+                        <option value="icon-spinner10">&#xe983; spinner10</option>
+                        <option value="icon-spinner11">&#xe984; spinner11</option>
+                        <option value="icon-binoculars">&#xe985; binoculars</option>
+                        <option value="icon-search2">&#xe986; search2</option>
+                        <option value="icon-zoom-in2">&#xe987; zoom-in2</option>
+                        <option value="icon-zoom-out2">&#xe988; zoom-out2</option>
+                        <option value="icon-enlarge">&#xe989; enlarge</option>
+                        <option value="icon-shrink">&#xe98a; shrink</option>
+                        <option value="icon-enlarge2">&#xe98b; enlarge2</option>
+                        <option value="icon-shrink2">&#xe98c; shrink2</option>
+                        <option value="icon-key3">&#xe98d; key3</option>
+                        <option value="icon-key2">&#xe98e; key2</option>
+                        <option value="icon-lock3">&#xe98f; lock3</option>
+                        <option value="icon-unlocked">&#xe990; unlocked</option>
+                        <option value="icon-wrench">&#xe991; wrench</option>
+                        <option value="icon-equalizer">&#xe992; equalizer</option>
+                        <option value="icon-equalizer2">&#xe993; equalizer2</option>
+                        <option value="icon-cog3">&#xe994; cog3</option>
+                        <option value="icon-cogs">&#xe995; cogs</option>
+                        <option value="icon-hammer">&#xe996; hammer</option>
+                        <option value="icon-magic-wand">&#xe997; magic-wand</option>
+                        <option value="icon-aid-kit">&#xe998; aid-kit</option>
+                        <option value="icon-bug">&#xe999; bug</option>
+                        <option value="icon-pie-chart2">&#xe99a;pie-chart2 </option>
+                        <option value="icon-stats-dots">&#xe99b; stats-dots</option>
+                        <option value="icon-stats-bars">&#xe99c; stats-bars</option>
+                        <option value="icon-stats-bars2">&#xe99d; stats-bars2</option>
+                        <option value="icon-trophy2">&#xe99e; trophy2</option>
+                        <option value="icon-gift">&#xe99f; gift</option>
+                        <option value="icon-glass">&#xe9a0; glass</option>
+                        <option value="icon-glass2">&#xe9a1; glass2</option>
+                        <option value="icon-mug">&#xe9a2;mug</option>
+                        <option value="icon-spoon-knife">&#xe9a3; spoon-knife</option>
+                        <option value="icon-leaf2">&#xe9a4; leaf2</option>
+                        <option value="icon-rocket2">&#xe9a5; rocket2</option>
+                        <option value="icon-meter">&#xe9a6; meter</option>
+                        <option value="icon-meter2">&#xe9a7; meter2</option>
+                        <option value="icon-hammer2">&#xe9a8; hammer2</option>
+                        <option value="icon-fire">&#xe9a9; fire</option>
+                        <option value="icon-lab">&#xe9aa; lab/option>
+                        <option value="icon-magnet2">&#xe9ab; magnet2</option>
+                        <option value="icon-bin">&#xe9ac; bin</option>
+                        <option value="icon-bin2">&#xe9ad; bin2</option>
+                        <option value="icon-briefcase3">&#xe9ae; briefcase3</option>
+                        <option value="icon-airplane">&#xe9af; airplane</option>
+                        <option value="icon-truck">&#xe9b0; truck</option>
+                        <option value="icon-road">&#xe9b1; road</option>
+                        <option value="icon-accessibility">&#xe9b2; accessibility</option>
+                        <option value="icon-target2">&#xe9b3; target2</option>
+                        <option value="icon-shield2">&#xe9b4; shield2</option>
+                        <option value="icon-power2">&#xe9b5; power2</option>
+                        <option value="icon-switch2">&#xe9b6; switch2</option>
+                        <option value="icon-power-cord">&#xe9b7; power-cord</option>
+                        <option value="icon-clipboard3">&#xe9b8; clipboard3</option>
+                        <option value="icon-list-numbered">&#xe9b9; list-numbered</option>
+                        <option value="icon-list3">&#xe9ba; list3</option>
+                        <option value="icon-list2">&#xe9bb; list2</option>
+                        <option value="icon-tree2">&#xe9bc; tree2</option>
+                        <option value="icon-menu6">&#xe9bd; menu6</option>
+                        <option value="icon-menu2">&#xe9be; menu2</option>
+                        <option value="icon-menu3">&#xe9bf; menu3</option>
+                        <option value="icon-menu4">&#xe9c0; menu4</option>
+                        <option value="icon-cloud3">&#xe9c1; cloud3</option>
+                        <option value="icon-cloud-download2">&#xe9c2; cloud-download2</option>
+                        <option value="icon-cloud-upload2">&#xe9c3; cloud-upload2</option>
+                        <option value="icon-cloud-check">&#xe9c4; cloud-check</option>
+                        <option value="icon-download2">&#xe9c5; download2</option>
+                        <option value="icon-upload2">&#xe9c6; upload2</option>
+                        <option value="icon-download3">&#xe9c7; download3</option>
+                        <option value="icon-upload3">&#xe9c8; upload3</option>
+                        <option value="icon-sphere">&#xe9c9; sphere</option>
+                        <option value="icon-earth">&#xe9ca; earth</option>
+                        <option value="icon-link2">&#xe9cb; link2</option>
+                        <option value="icon-flag3">&#xe9cc; flag3</option>
+                        <option value="icon-attachment2">&#xe9cd; attachment2</option>
+                        <option value="icon-eye3">&#xe9ce; eye3</option>
+                        <option value="icon-eye-plus">&#xe9cf; eye-plus</option>
+                        <option value="icon-eye-minus">&#xe9d0; eye-minus</option>
+                        <option value="icon-eye-blocked">&#xe9d1; eye-blocked</option>
+                        <option value="icon-bookmark2">&#xe9d2; bookmark2</option>
+                        <option value="icon-bookmarks2">&#xe9d3; bookmarks2</option>
+                        <option value="icon-sun2">&#xe9d4; sun2</option>
+                        <option value="icon-contrast">&#xe9d5; contrast</option>
+                        <option value="icon-brightness-contrast">&#xe9d6; brightness-contrast</option>
+                        <option value="icon-star-empty">&#xe9d7; star-empty</option>
+                        <option value="icon-star-half">&#xe9d8; star-half</option>
+                        <option value="icon-star-full">&#xe9d9; star-full</option>
+                        <option value="icon-heart3">&#xe9da; heart3</option>
+                        <option value="icon-heart-broken">&#xe9db; heart-broken</option>
+                        <option value="icon-man2">&#xe9dc; man2</option>
+                        <option value="icon-woman">&#xe9dd; woman</option>
+                        <option value="icon-man-woman">&#xe9de; man-woman</option>
+                        <option value="icon-happy">&#xe9df; happy</option>
+						<option value="icon-happy2">&#xe9e0; happy2</option>
+                        <option value="icon-smile">&#xe9e1; smile</option>
+                        <option value="icon-smile2">&#xe9e2; smile2</option>
+                        <option value="icon-tongue">&#xe9e3; tongue</option>
+                        <option value="icon-tongue2">&#xe9e4; tongue2</option>
+                        <option value="icon-sad">&#xe9e5; sad</option>
+                        <option value="icon-sad2">&#xe9e6; sad2</option>
+                        <option value="icon-wink">&#xe9e7; wink</option>
+                        <option value="icon-wink2">&#xe9e8; wink2</option>
+                        <option value="icon-grin">&#xe9e9; grin</option>
+                        <option value="icon-grin2">&#xe9ea; grin2</option>
+                        <option value="icon-cool">&#xe9eb; cool</option>
+                        <option value="icon-cool2">&#xe9ec; cool2</option>
+                        <option value="icon-angry">&#xe9ed; angry</option>
+                        <option value="icon-angry2">&#xe9ee; angry2</option>
+                        <option value="icon-evil">&#xe9ef; evil</option>
+                        <option value="icon-evil2">&#xe9f0; evil2</option>
+                        <option value="icon-shocked">&#xe9f1; shocked</option>
+                        <option value="icon-shocked2">&#xe9f2; shocked2</option>
+                        <option value="icon-baffled">&#xe9f3; baffled</option>
+                        <option value="icon-baffled2">&#xe9f4; baffled2</option>
+                        <option value="icon-confused">&#xe9f5; confused</option>
+                        <option value="icon-confused2">&#xe9f6; confused2</option>
+                        <option value="icon-neutral">&#xe9f7; neutral</option>
+                        <option value="icon-neutral2">&#xe9f8; neutral2</option>
+                        <option value="icon-hipster">&#xe9f9; hipster</option>
+                        <option value="icon-hipster2">&#xe9fa; hipster2</option>
+                        <option value="icon-wondering">&#xe9fb; wondering</option>
+                        <option value="icon-wondering2">&#xe9fc; wondering2</option>
+                        <option value="icon-sleepy">&#xe9fd; sleepy</option>
+                        <option value="icon-sleepy2">&#xe9fe; sleepy2</option>
+                        <option value="icon-frustrated">&#xe9ff; frustrated</option>
+                        <option value="icon-frustrated2">&#xea00; frustrated2</option>
+                        <option value="icon-crying">&#xea01; crying</option>
+                        <option value="icon-crying2">&#xea02; crying2</option>
+                        <option value="icon-point-up">&#xea03; point-up</option>
+                        <option value="icon-point-right">&#xea04; point-right</option>
+                        <option value="icon-point-down">&#xea05; point-down</option>
+                        <option value="icon-point-left">&#xea06; point-left</option>
+                        <option value="icon-warning2">&#xea07; warning2</option>
+                        <option value="icon-notification2">&#xea08; notification2</option>
+                        <option value="icon-question">&#xea09; question</option>
+                        <option value="icon-plus3">&#xea0a; plus3</option>
+                        <option value="icon-minus3">&#xea0b; minus3</option>
+                        <option value="icon-info2">&#xea0c; info2</option>
+                        <option value="icon-cancel-circle">&#xea0d; cancel-circle</option>
+                        <option value="icon-blocked">&#xea0e; blocked</option>
+                        <option value="icon-cross3">&#xea0f; cross3</option>
+                        <option value="icon-checkmark">&#xea10; checkmark</option>
+                        <option value="icon-checkmark2">&#xea11; checkmark2</option>
+                        <option value="icon-spell-check">&#xea12; spell-check</option>
+                        <option value="icon-enter">&#xea13; enter</option>
+                        <option value="icon-exit">&#xea14; exit</option>
+                        <option value="icon-play2">&#xea15; play2</option>
+                        <option value="icon-pause3">&#xea16; pause3</option>
+                        <option value="icon-stop3">&#xea17; stop3</option>
+                        <option value="icon-previous">&#xea18; previous</option>
+                        <option value="icon-next">&#xea19; next</option>
+                        <option value="icon-backward">&#xea1a; backward</option>
+                        <option value="icon-forward2">&#xea1b; forward2</option>
+                        <option value="icon-play3">&#xea1c; play3</option>
+                        <option value="icon-pause2">&#xea1d; pause2</option>
+                        <option value="icon-stop2">&#xea1e; stop2</option>
+                        <option value="icon-backward2">&#xea1f; backward2</option>
+                        <option value="icon-forward3">&#xea20; forward3</option>
+                        <option value="icon-first">&#xea21; first</option>
+                        <option value="icon-last">&#xea22; last</option>
+                        <option value="icon-previous2">&#xea23; previous2</option>
+                        <option value="icon-next2">&#xea24; next2</option>
+                        <option value="icon-eject">&#xea25; eject</option>
+                        <option value="icon-volume-high">&#xea26; volume-high</option>
+                        <option value="icon-volume-medium">&#xea27; volume-medium</option>
+                        <option value="icon-volume-low">&#xea28; volume-low</option>
+                        <option value="icon-volume-mute">&#xea29; volume-mute</option>
+                        <option value="icon-volume-mute2">&#xea2a; volume-mute2</option>
+                        <option value="icon-volume-increase">&#xea2b; volume-increase</option>
+                        <option value="icon-volume-decrease">&#xea2c; volume-decrease</option>
+                        <option value="icon-loop3">&#xea2d; loop3</option>
+                        <option value="icon-loop2">&#xea2e; loop2</option>
+                        <option value="icon-infinite">&#xea2f; infinite</option>
+                        <option value="icon-shuffle3">&#xea30; shuffle3</option>
+                        <option value="icon-arrow-up-left">&#xea31; arrow-up-left</option>
+                        <option value="icon-arrow-up4">&#xea32; arrow-up4</option>
+                        <option value="icon-arrow-up-right">&#xea33; arrow-up-right</option>
+                        <option value="icon-arrow-right4">&#xea34; arrow-right4</option>
+                        <option value="icon-arrow-down-right">&#xea35; arrow-down-right</option>
+                        <option value="icon-arrow-down4">&#xea36; arrow-down4</option>
+                        <option value="icon-arrow-down-left">&#xea37; arrow-down-left</option>
+                        <option value="icon-arrow-left4">&#xea38; arrow-left4</option>
+                        <option value="icon-arrow-up-left2">&#xea39; arrow-up-left2</option>
+                        <option value="icon-arrow-up2">&#xea3a; arrow-up2</option>
+                        <option value="icon-arrow-up-right2">&#xea3b; arrow-up-right2</option>
+                        <option value="icon-arrow-right2">&#xea3c; arrow-right2</option>
+                        <option value="icon-arrow-down-right2">&#xea3d; arrow-down-right2</option>
+                        <option value="icon-arrow-down2">&#xea3e; arrow-down2</option>
+                        <option value="icon-arrow-down-left2">&#xea3f;arrow-down-left2</option>
+						<option value="icon-arrow-left2">&#xea40; arrow-left2</option>
+                        <option value="icon-circle-up">&#xea41; circle-up</option>
+                        <option value="icon-circle-right">&#xea42; circle-right</option>
+                        <option value="icon-circle-down">&#xea43; circle-down</option>
+                        <option value="icon-circle-left">&#xea44; circle-left</option>
+                        <option value="icon-tab">&#xea45; tab</option>
+                        <option value="icon-move-up">&#xea46; move-up</option>
+                        <option value="icon-move-down">&#xea47; move-down</option>
+                        <option value="icon-sort-alpha-asc">&#xea48; sort-alpha-asc</option>
+                        <option value="icon-sort-alpha-desc">&#xea49; sort-alpha-desc</option>
+                        <option value="icon-sort-numeric-asc">&#xea4a; sort-numeric-asc</option>
+                        <option value="icon-sort-numberic-desc">&#xea4b; sort-numberic-desc</option>
+                        <option value="icon-sort-amount-asc">&#xea4c; sort-amount-asc</option>
+                        <option value="icon-sort-amount-desc">&#xea4d; sort-amount-desc</option>
+                        <option value="icon-command2">&#xea4e; command2</option>
+                        <option value="icon-shift">&#xea4f; shift</option>
+                        <option value="icon-ctrl">&#xea50; ctrl</option>
+                        <option value="icon-opt">&#xea51; opt</option>
+                        <option value="icon-checkbox-checked">&#xea52; checkbox-checked</option>
+                        <option value="icon-checkbox-unchecked">&#xea53; checkbox-unchecked</option>
+                        <option value="icon-radio-checked">&#xea54; radio-checked</option>
+                        <option value="icon-radio-checked2">&#xea55; radio-checked2</option>
+                        <option value="icon-radio-unchecked">&#xea56; radio-unchecked</option>
+                        <option value="icon-crop">&#xea57; crop</option>
+                        <option value="icon-make-group">&#xea58; make-group</option>
+                        <option value="icon-ungroup">&#xea59; ungroup</option>
+                        <option value="icon-scissors2">&#xea5a; scissors2</option>
+                        <option value="icon-filter">&#xea5b; filter</option>
+                        <option value="icon-font">&#xea5c; font</option>
+                        <option value="icon-ligature">&#xea5d; ligature</option>
+                        <option value="icon-ligature2">&#xea5e; ligature2</option>
+                        <option value="icon-text-height">&#xea5f; text-height</option>
+                        <option value="icon-text-width">&#xea60; text-width</option>
+                        <option value="icon-font-size">&#xea61; font-size</option>
+                        <option value="icon-bold">&#xea62; bold</option>
+                        <option value="icon-underline">&#xea63; underline</option>
+                        <option value="icon-italic">&#xea64; italic</option>
+                        <option value="icon-strikethrough">&#xea65; strikethrough</option>
+                        <option value="icon-omega">&#xea66; omega</option>
+                        <option value="icon-sigma">&#xea67; sigma</option>
+                        <option value="icon-page-break">&#xea68; page-break</option>
+                        <option value="icon-superscript">&#xea69; superscript</option>
+                        <option value="icon-subscript">&#xea6a; subscript</option>
+                        <option value="icon-superscript2">&#xea6b; superscript2</option>
+                        <option value="icon-subscript2">&#xea6c; subscript2</option>
+                        <option value="icon-text-color">&#xea6d; text-color</option>
+                        <option value="icon-pagebreak">&#xea6e; pagebreak</option>
+                        <option value="icon-clear-formatting">&#xea6f; clear-formatting</option>
+                        <option value="icon-table">&#xea70; table</option>
+                        <option value="icon-table2">&#xea71; table2</option>
+                        <option value="icon-insert-template">&#xea72; insert-template</option>
+                        <option value="icon-pilcrow">&#xea73; pilcrow</option>
+                        <option value="icon-ltr">&#xea74; ltr</option>
+                        <option value="icon-rtl">&#xea75; rtl</option>
+                        <option value="icon-section">&#xea76; section</option>
+                        <option value="icon-paragraph-left">&#xea77; paragraph-left</option>
+                        <option value="icon-paragraph-center">&#xea78; paragraph-center</option>
+                        <option value="icon-paragraph-right">&#xea79; paragraph-right</option>
+                        <option value="icon-paragraph-justify">&#xea7a; paragraph-justify</option>
+                        <option value="icon-indent-increase">&#xea7b; indent-increase</option>
+                        <option value="icon-indent-decrease">&#xea7c; indent-decrease</option>
+                        <option value="icon-share4">&#xea7d; share4</option>
+                        <option value="icon-new-tab">&#xea7e; new-tab</option>
+                        <option value="icon-embed">&#xea7f; embed</option>
+                        <option value="icon-embed2">&#xea80; embed2</option>
+                        <option value="icon-terminal">&#xea81; terminal</option>
+                        <option value="icon-share2">&#xea82; share2</option>
+                        <option value="icon-mail6">&#xea83; mail6</option>
+                        <option value="icon-mail2">&#xea84; mail2</option>
+                        <option value="icon-mail3">&#xea85; mail3</option>
+                        <option value="icon-mail4">&#xea86; mail4</option>
+                        <option value="icon-google2">&#xea87; google2</option>
+                        <option value="icon-google-plus">&#xea88; google-plus</option>
+                        <option value="icon-google-plus2">&#xea89; google-plus2</option>
+                        <option value="icon-google-plus3">&#xea8a; google-plus3</option>
+                        <option value="icon-google-drive2">&#xea8b; google-drive2</option>
+                        <option value="icon-facebook2">&#xea8c; facebook2</option>
+                        <option value="icon-facebook22">&#xea8d; facebook22</option>
+                        <option value="icon-facebook3">&#xea8e; facebook3</option>
+                        <option value="icon-ello">&#xea8f; ello</option>
+                        <option value="icon-instagram2">&#xea90; instagram2</option>
+                        <option value="icon-twitter2">&#xea91; twitter2</option>
+                        <option value="icon-twitter22">&#xea92; twitter22</option>
+                        <option value="icon-twitter3">&#xea93; twitter3</option>
+                        <option value="icon-feed2">&#xea94; feed2</option>
+                        <option value="icon-feed3">&#xea95; feed3</option>
+                        <option value="icon-feed4">&#xea96; feed4</option>
+                        <option value="icon-youtube5">&#xea97; youtube5</option>
+                        <option value="icon-youtube2">&#xea98; youtube2</option>
+                        <option value="icon-youtube3">&#xea99; youtube3</option>
+                        <option value="icon-youtube4">&#xea9a; youtube4</option>
+                        <option value="icon-twitch">&#xea9b; twitch</option>
+                        <option value="icon-vimeo4">&#xea9c; vimeo4</option>
+                        <option value="icon-vimeo2">&#xea9d; vimeo2</option>
+                        <option value="icon-vimeo3">&#xea9e; vimeo3</option>
+                        <option value="icon-lanyrd">&#xea9f; lanyrd</option>
+						<option value="icon-flickr5">&#xeaa0; flickr5</option>
+                        <option value="icon-flickr2">&#xeaa1; flickr2</option>
+                        <option value="icon-flickr3">&#xeaa2; flickr3</option>
+                        <option value="icon-flickr4">&#xeaa3; flickr4</option>
+                        <option value="icon-picassa">&#xeaa4; picassa</option>
+                        <option value="icon-picassa2">&#xeaa5; picassa2</option>
+                        <option value="icon-dribbble4">&#xeaa6; dribbble4</option>
+                        <option value="icon-dribbble2">&#xeaa7; dribbble2</option>
+                        <option value="icon-dribbble3">&#xeaa8; dribbble3</option>
+                        <option value="icon-forrst">&#xeaa9; forrst</option>
+                        <option value="icon-forrst2">&#xeaaa; forrst2</option>
+                        <option value="icon-deviantart">&#xeaab; deviantart</option>
+                        <option value="icon-deviantart2">&#xeaac; deviantart2</option>
+                        <option value="icon-steam">&#xeaad; steam</option>
+                        <option value="icon-steam2">&#xeaae; steam2</option>
+                        <option value="icon-dropbox2">&#xeaaf; dropbox2</option>
+                        <option value="icon-onedrive2">&#xeab0; onedrive2</option>
+                        <option value="icon-github6">&#xeab1; github6</option>
+                        <option value="icon-github2">&#xeab2; github2</option>
+                        <option value="icon-github3">&#xeab3; github3</option>
+                        <option value="icon-github4">&#xeab4; github4</option>
+                        <option value="icon-github5">&#xeab5; github5</option>
+                        <option value="icon-wordpress">&#xeab6; wordpress</option>
+                        <option value="icon-wordpress2">&#xeab7; wordpress2</option>
+                        <option value="icon-joomla">&#xeab8; joomla</option>
+                        <option value="icon-blogger">&#xeab9; blogger</option>
+                        <option value="icon-blogger2">&#xeaba; blogger2</option>
+                        <option value="icon-tumblr3">&#xeabb; tumblr3</option>
+                        <option value="icon-tumblr2">&#xeabc; tumblr2</option>
+                        <option value="icon-yahoo">&#xeabd; yahoo</option>
+                        <option value="icon-tux">&#xeabe; tux</option>
+                        <option value="icon-apple">&#xeabf; apple</option>
+                        <option value="icon-finder">&#xeac0; finder</option>
+                        <option value="icon-android">&#xeac1; android</option>
+                        <option value="icon-windows">&#xeac2; windows</option>
+                        <option value="icon-window8">&#xeac3; windows8</option>
+                        <option value="icon-soundcloud3">&#xeac4; soundcloud3</option>
+                        <option value="icon-soundcloud2">&#xeac5; soundcloud2</option>
+                        <option value="icon-skype2">&#xeac6; skype2</option>
+                        <option value="icon-reddit">&#xeac7; reddit</option>
+                        <option value="icon-linkedin3">&#xeac8; linkedin3</option>
+                        <option value="icon-linkedin2">&#xeac9; linkedin2</option>
+                        <option value="icon-lastfm3">&#xeaca; lastfm3</option>
+                        <option value="icon-lastfm2">&#xeacb; lastfm2</option>
+                        <option value="icon-delicious">&#xeacc; delicious</option>
+                        <option value="icon-stumbleupon3">&#xeacd; stumbleupon3</option>
+                        <option value="icon-stumbleupon2">&#xeace; stumbleupon2</option>
+                        <option value="icon-stackoverflow">&#xeacf; stackoverflow</option>
+                        <option value="icon-pinterest3">&#xead0; pinterest3</option>
+                        <option value="icon-pinterest2">&#xead1; pinterest2</option>
+                        <option value="icon-xing3">&#xead2; xing3</option>
+                        <option value="icon-xing2">&#xead3; xing2</option>
+                        <option value="icon-flattr2">&#xead4; flattr2</option>
+                        <option value="icon-foursquare2">&#xead5; foursquare2</option>
+                        <option value="icon-paypal4">&#xead6; paypal4</option>
+                        <option value="icon-paypal2">&#xead7; paypal2</option>
+                        <option value="icon-paypal3">&#xead8; paypal3</option>
+                        <option value="icon-yelp2">&#xead9; yelp2</option>
+                        <option value="icon-file-pdf">&#xeada; file-pdf</option>
+                        <option value="icon-file-openoffice">&#xeadb; file-openoffice</option>
+                        <option value="icon-file-word">&#xeadc; file-word</option>
+                        <option value="icon-file-excel">&#xeadd; file-excel</option>
+                        <option value="icon-libreoffice">&#xeade; libreoffice</option>
+                        <option value="icon-html5">&#xeadf; html5</option>
+                        <option value="icon-html52">&#xeae0; html52</option>
+                        <option value="icon-css3">&#xeae1; css3</option>
+                        <option value="icon-git">&#xeae2; git</option>
+                        <option value="icon-svg">&#xeae3; svg</option>
+                        <option value="icon-codepen">&#xeae4; codepen</option>
+                        <option value="icon-chrome">&#xeae5; chrome</option>
+                        <option value="icon-firefox">&#xeae6; firefox</option>
+                        <option value="icon-IE">&#xeae7; IE</option>
+                        <option value="icon-opera">&#xeae8; opera</option>
+                        <option value="icon-safari">&#xeae9; safari</option>
+                        <option value="icon-IcoMoon">&#xeaea; IcoMoon</option>
+                    </select>
+
+                </div><!-- /.tab-pane -->
+
+                <div class="tab-pane videoTab" id="video_Tab">
+
+                    <label>Youtube ID:</label>
+
+                    <input type="text" class="form-control margin-bottom-20" id="youtubeID" placeholder="Enter a Youtube video ID" value="">
+
+                    <p class="text-center or">
+                        <span>or</span>
+                    </p>
+
+                    <label>Vimeo ID:</label>
+
+                    <input type="text" class="form-control margin-bottom-20" id="vimeoID" placeholder="Enter a Vimeo video ID" value="">
+
+                </div><!-- /.tab-pane -->
+
+            </div><!-- /.tab-content -->
+
+            <div class="alert alert-success" style="display: none;" id="detailsAppliedMessage">
+                <button class="close fui-cross" type="button" id="detailsAppliedMessageHide"></button>
+                The changes were applied successfully!
+            </div>
+
+            <div class="margin-bottom-5">
+                <button type="button" class="btn btn-primary btn-embossed btn-sm btn-block" id="saveStyling"><span class="fui-check-inverted"></span> Apply Changes</button>
+            </div>
+
+            <div class="sideButtons clearfix">
+                <button type="button" class="btn btn-inverse btn-embossed btn-xs" id="cloneElementButton">
+                    <span class="fui-windows"></span> Clone
+                </button>
+                <button type="button" class="btn btn-warning btn-embossed btn-xs" id="resetStyleButton">
+                    <i class="fa fa-refresh"></i> Reset
+                </button>
+                <button type="button" class="btn btn-danger btn-embossed btn-xs" data-target="#deleteElement" data-toggle="modal" id="removeElementButton">
+                    <span class="fui-cross-inverted"></span> Remove
+                </button>
+            </div>
+
+        </div><!-- /#styleEditor -->
+
+        <div id="hidden">
+            <iframe src="urip-elements/skeleton.html" id="skeleton"></iframe>
+        </div>
+
+        <div id="loader">
+            <span>{</span><span>}</span>
+        </div>
+
+        <div class="sandboxes" id="sandboxes" style="display: none"></div>
+
+    </div><!-- /#builder -->
+
+    <!-- modals -->
+
+    <!-- export HTML popup -->
+    <div class="modal fade" id="exportModal" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <form action="_export.php" target="_blank" id="markupForm" method="post" class="form-horizontal">
+
+        <input type="hidden" name="siteID" value="">
+
+        <input type="hidden" name="markup" value="" id="markupField">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><span class="fui-export"></span> Export your site</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Doc type</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="doctype" id="doctype" placeholder="Doc type" value="<!--DOCTYPE html -->">
+                        </div>
+                    </div>
+
+                </div><!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="exportCancel">Cancel & Close</button>
+                    <button type="submit" type="button" class="btn btn-primary btn-embossed" id="exportSubmit">Export Now</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+        </form>
+
+    </div><!-- /.modal -->
+
+    <!-- delete single block popup -->
+    <div class="modal fade small-modal" id="deleteBlock" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+					<p style="font-weight: normal;">
+	                    Are you sure you want to delete this block?
+					</p>
+                </div><!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel &  Close</button>
+                    <button type="button" type="button" class="btn btn-primary btn-embossed" id="deleteBlockConfirm">Delete</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+    </div><!-- /.modal -->
+
+    <div class="modal fade small-modal" id="resetBlock" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <p style="font-weight: normal;">
+                        Are you sure you want to reset this block?
+                    </p>
+                    <p>
+                        All changes made to the content will be destroyed.
+                    </p>
+
+                </div><!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+                    <button type="button" type="button" class="btn btn-primary btn-embossed" id="resetBlockConfirm">Reset Block</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+    </div><!-- /.modal -->
+
+    <!-- delete page popup -->
+    <div class="modal fade small-modal" id="deletePage" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <p style="font-weight: normal;">
+                        Are you sure you want to delete this entire page?
+                    </p>
+
+                </div><!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="deletePageCancel">Cancel & Close</button>
+                    <button type="button" type="button" class="btn btn-primary btn-embossed" id="deletePageConfirm">Delete Page</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+    </div><!-- /.modal -->
+
+    <!-- delete elemnent popup -->
+    <div class="modal fade small-modal" id="deleteElement" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <p style="font-weight: normal;">
+                        Are you sure you want to delete this element?
+                    </p>
+
+                    <p>
+	                    Once deleted, it can not be restored.
+                    </p>
+
+                </div><!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal" id="deletePageCancel">Cancel & Close</button>
+                    <button type="button" type="button" class="btn btn-primary btn-embossed" id="deleteElementConfirm">Delete Block</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+    </div><!-- /.modal -->
+
+    <!-- edit content popup -->
+    <div class="modal fade" id="editContentModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <textarea id="contentToEdit"></textarea>
+
+                </div><!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal">Cancel & Close</button>
+                    <button type="button" type="button" class="btn btn-primary btn-embossed" id="updateContentInFrameSubmit">Update Content</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+    </div><!-- /.modal -->
+
+    <!-- preview popup -->
+    <div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <form action="_preview.php" target="_blank" id="markupPreviewForm" method="post" class="form-horizontal">
+
+        <input type="hidden" name="markup" value="" id="markupField">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><span class="fui-window"></span> Page Preview</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <p>
+                        Please note that links to other pages will not function properly in the preview, you can only preview a single page at once.
+                    </p>
+
+                </div><!-- /.modal-body -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-embossed" data-dismiss="modal"><span class="fui-cross"></span> Cancel & Close</button>
+                    <button type="submit" class="btn btn-primary btn-embossed"><span class="fui-export"></span> Preview Changes</button>
+                </div>
+
+            </div><!-- /.modal-content -->
+
+        </div><!-- /.modal-dialog -->
+
+        </form>
+
+    </div><!-- /.modal -->
+
+    <div class="modal fade errorModal" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-sm">
+
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                </div><!-- /.modal-body -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-block" data-dismiss="modal"><span class="fui-cross"></span> Close Window</button>
+                </div>
+
+            </div><!-- /.modal-content -->
+
+        </div><!-- /.modal-dialog -->
+
+    </div><!-- /.modal -->
+
+    <div class="modal fade successModal" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-sm">
+
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                </div><!-- /.modal-body -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-block" data-dismiss="modal"><span class="fui-cross"></span> Close Window</button>
+                </div>
+
+            </div><!-- /.modal-content -->
+
+        </div><!-- /.modal-dialog -->
+
+    </div><!-- /.modal -->
+
+    <!-- Load JS here for greater good =============================-->
+    <script>
+    var siteUrl = '';
+    var baseUrl = '';
+    </script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/jquery-ui.min.js"></script>
+    <script src="js/vendor/flat-ui-pro.min.js"></script>
+    <script src="js/vendor/chosen.min.js"></script>
+    <script src="js/vendor/jquery.zoomer.js"></script>
+    <script src="js/vendor/spectrum.js"></script>
+    <script src="js/vendor/ace/ace.js"></script>
+    <script src="js/min/builder-min.js"></script>
+</body>
+</html>

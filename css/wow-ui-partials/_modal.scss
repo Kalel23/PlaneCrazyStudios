@@ -1,0 +1,70 @@
+.modal {
+	&-dialog {
+		max-width: 560px;
+	}
+
+	&-header {
+		padding-right: 26px;
+	}
+
+	&-body {
+		padding: 30px 24px;
+
+		.form-group {
+			margin-bottom: 0;
+		}
+
+		p {
+			font-weight: 300;
+		}
+	}
+
+	&-title {
+		color: $dark;
+
+		span {
+			font-size: 19px;
+			margin-right: 5px;
+		}
+	}
+
+	&-footer {
+		padding: 0;
+		text-align: inherit;
+
+		button {
+			width: 50%;
+			float: left;
+
+			&:hover {
+				background-color: darken($yellow, 3%) !important;
+				color: lighten($dark, 10%);
+			}
+		}
+
+		.btn + .btn {
+			margin-left: 0;
+		}
+
+		.btn-default {
+			background: $dark;
+			color: $text-dark;
+		}
+
+		.btn-primary {
+			background: $yellow;
+			color: $dark;
+		}
+	}
+}
+
+.form-horizontal .control-label {
+	text-align: left;
+	font-size: 16px;
+}
+
+.form-control {
+	&:focus {
+		border-color: $dark;
+	}
+}

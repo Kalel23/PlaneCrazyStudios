@@ -1,0 +1,91 @@
+.menu {
+	.main {
+		background: $dark;
+
+		h3 {
+			span {
+				color: $yellow;
+			}
+		}
+
+		ul {
+			margin-top: 21px;
+
+			> li > a {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				color: $text-dark;
+				font-weight: normal;
+				transition: all 0.3s;
+				transition-delay: .1s;
+
+				&:hover {
+					background-color: darken($yellow, 3%) !important;
+					color: lighten($dark, 10%) !important;
+				}
+			}
+		}
+
+		> hr {
+			border-color: transparent !important;
+			margin-bottom: 10px;
+		}
+
+		ul#pages {
+			li {
+				height: 45px;
+
+				&.active,
+				a:hover {
+					background: #000 !important;
+					color: $yellow !important;
+				}
+
+				a {
+					color: $text-light;
+				}
+
+				&.active > a {
+					color: $yellow;
+				}
+
+				span {
+					margin-top: 10px;
+
+					.fileEdit {
+						font-size: 14px;
+						color: $text-light;
+					}
+
+					.fileDel {
+						font-size: 14px;
+						margin-right: 5px;
+					}
+
+					.fileSave {
+						background: $yellow;
+						color: $dark !important;
+					    top: -10px !important;
+					    padding-top: 17px;
+					    padding-bottom: 16px;
+					    right: -20px;
+
+					    &:hover {
+						    color: $yellow !important;
+					    }
+					}
+				}
+
+				input {
+					height: 45px;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+
+	.second {
+		background: darken($dark, 50%);
+		border: none;
+	}
+}

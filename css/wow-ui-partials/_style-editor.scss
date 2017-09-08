@@ -1,0 +1,230 @@
+.styleEditor {
+	box-shadow: none;
+	background: #000;
+	color: $text-dark;
+
+	h3 {
+		color: $text-light;
+
+		span {
+			color: $yellow;
+		}
+	}
+
+	> a.close {
+		color: $text-light;
+		margin-top: 10px;
+		opacity: 1;
+		text-shadow: none;
+	}
+
+	ul.breadcrumb {
+		background: lighten($dark, 12%);
+		color: $text-light;
+
+		li::after {
+			color: $text-light;
+			margin-top: -1px;
+		}
+
+		.active {
+			color: $yellow;
+			text-transform: lowercase;
+			font-weight: 300;
+		}
+	}
+
+	.nav-tabs {
+		margin-bottom: 2px;
+
+		a {
+			color: $text-dark;
+			transition: all 0.3s;
+
+			span {
+				color: $text-dark;
+				margin-right: 5px;
+			}
+
+			&:hover {
+				background-color: lighten($dark, 5%) !important;
+				color: lighten($text-dark, 10%);
+			}
+		}
+
+		li.active {
+			a {
+				background-color: lighten($dark, 12%) !important;
+				border: none;
+				color: $text-light;
+
+				span {
+					color: $yellow;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding:18px 20px 10px;
+		background: lighten($dark, 12%);
+		border: none;
+
+		.form-control {
+			border-color: lighten($dark, 28%);
+			background: lighten($dark, 22%);
+			color: $text-light;
+		}
+
+		.form-group > .sp-replacer {
+			border-color: lighten($dark, 28%);
+			background: lighten($dark, 22%);
+		}
+	}
+
+	form {
+		margin-bottom: 0;
+
+		.form-group {
+			margin-bottom: 5px;
+		}
+	}
+
+	p.or {
+		border: none;
+		text-align: left;
+		font-weight: 300;
+
+		span {
+			background: none;
+			color: $text-light;
+		}
+	}
+
+	#saveStyling {
+		background: $yellow;
+		color: $dark;
+	}
+
+	.sideButtons {
+		.btn {
+			background: $dark;
+
+			&:hover {
+				background-color: darken($yellow, 3%);
+				color: lighten($dark, 10%);
+			}
+		}
+
+		#resetStyleButton,
+		#removeElementButton {
+			&:hover {
+				background: $danger;
+				color: $text-light;
+			}
+		}
+	}
+
+
+	.alert {
+		color: $text-light;
+
+		&.alert-success {
+			background: lighten($dark, 32%);
+			border-color: lighten($dark, 44%);
+		}
+
+		.close {
+			color: $dark;
+			text-shadow: none;
+			opacity: 1;
+		}
+	}
+}
+
+.sp-dd {
+	color: $text-light;
+}
+
+// Select Box 1
+.select-primary .select2-choice {
+	background: inherit;
+
+	&:hover {
+		background: lighten($dark, 20%);
+	}
+}
+
+.select2-drop {
+	border-radius: 0;
+
+	.select2-results {
+		> li {
+			> .select2-result-label {
+				border-radius: 0 !important;
+			}
+		}
+	}
+}
+
+.select2-drop .select2-highlighted > .select2-result-label,
+.chosen-container .chosen-results li.highlighted {
+	background: darken(#e1e4e7, 20%);
+}
+
+
+// Select Box 2 (Iconfont)
+.chosen-container-single {
+	.chosen-single {
+		background: lighten($dark, 22%);
+		color: $text-light;
+		border: none;
+		padding-left: 15px;
+
+		&:hover {
+			background: lighten($dark, 20%);
+		}
+
+		span {
+			line-height: 40px;
+		}
+	}
+
+	.chosen-drop {
+		margin-top: 0;
+		border: none
+	}
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+	border: none;
+}
+
+// File Upload
+.fileinput {
+	.btn-file,
+	a.fileinput-exists {
+		padding-top: 15px;
+		padding-bottom: 14px;
+		width: 50%;
+		float: left;
+	}
+
+	.btn-file {
+		background: $yellow;
+		color: $dark;
+	}
+
+	a.fileinput-exists {
+		background: $danger;
+		color: $text-light;
+	}
+}
+
+// Color Picker
+.sp-choose {
+	background-color: $yellow !important;
+	color: $dark !important;
+}

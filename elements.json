@@ -1,0 +1,66 @@
+{"elements": {
+    "Headers":[
+	    {"url":"urip-elements/hero-subscribe.html","height":750, "thumbnail":"images/thumbs/hero-subscribe.png", "loaderFunction":"startHeadhesive"},
+	    {"url":"urip-elements/hero-form.html","height":750, "thumbnail":"images/thumbs/hero-form.png", "loaderFunction":"startHeadhesive"},
+	    {"url":"urip-elements/hero-creative.html","height":750, "thumbnail":"images/thumbs/hero-creative.png", "loaderFunction":"startHeadhesive"},
+	    {"url":"urip-elements/hero-app.html","height":750, "thumbnail":"images/thumbs/hero-app.png", "loaderFunction":"startHeadhesive"},
+	    {"url":"urip-elements/hero-event.html","height":750, "thumbnail":"images/thumbs/hero-event.png", "loaderFunction":"startHeadhesive"}
+    ],
+    "Clients Logos":[
+	    {"url":"urip-elements/client-top.html","height":350, "thumbnail":"images/thumbs/client-top.png"},
+	    {"url":"urip-elements/client-bottom.html","height":750, "thumbnail":"images/thumbs/client-bottom.png"}
+    ],
+    "Introduction":[
+	    {"url":"urip-elements/what-we-do-1.html","height":535, "thumbnail":"images/thumbs/what-we-do-1.png"},
+	    {"url":"urip-elements/what-we-do-2.html","height":935, "thumbnail":"images/thumbs/what-we-do-2.png"},
+	    {"url":"urip-elements/what-we-do-3.html","height":1117, "thumbnail":"images/thumbs/what-we-do-3.png"}
+    ],
+	"Features":[
+		{"url":"urip-elements/features-1.html","height":975, "thumbnail":"images/thumbs/features-1.png"},
+		{"url":"urip-elements/features-2.html","height":975, "thumbnail":"images/thumbs/features-2.png"},
+		{"url":"urip-elements/features-3.html","height":975, "thumbnail":"images/thumbs/features-3.png"}
+	],
+    "Content Sections":[
+	    {"url":"urip-elements/how-it-works.html","height":472, "thumbnail":"images/thumbs/how-it-works.png"},
+	    {"url":"urip-elements/two-block-1.html","height":950, "thumbnail":"images/thumbs/two-block-1.png"},
+	    {"url":"urip-elements/two-block-2.html","height":950, "thumbnail":"images/thumbs/two-block-2.png"},
+	    {"url":"urip-elements/recent-work.html","height":726, "thumbnail":"images/thumbs/recent-work.png"},
+	    {"url":"urip-elements/app-feature-1.html","height":726, "thumbnail":"images/thumbs/app-feature-1.png"},
+	    {"url":"urip-elements/app-feature-2.html","height":726, "thumbnail":"images/thumbs/app-feature-2.png"},
+	    {"url":"urip-elements/app-feature-3.html","height":520, "thumbnail":"images/thumbs/app-feature-3.png"},
+	    {"url":"urip-elements/app-feature-4.html","height":520, "thumbnail":"images/thumbs/app-feature-4.png"}
+    ],
+    "Breakout":[
+    	{"url":"urip-elements/breakout-1.html","height":344, "thumbnail":"images/thumbs/breakout-1.png"},
+    	{"url":"urip-elements/breakout-2.html","height":359, "thumbnail":"images/thumbs/breakout-2.png"},
+    	{"url":"urip-elements/breakout-3.html","height":405, "thumbnail":"images/thumbs/breakout-3.png"},
+    	{"url":"urip-elements/breakout-4.html","height":524, "thumbnail":"images/thumbs/breakout-4.png"},
+    	{"url":"urip-elements/breakout-5.html","height":377, "thumbnail":"images/thumbs/breakout-5.png"},
+    	{"url":"urip-elements/breakout-6.html","height":345, "thumbnail":"images/thumbs/breakout-6.png"},
+    	{"url":"urip-elements/breakout-7.html","height":402, "thumbnail":"images/thumbs/breakout-7.png"}
+    ],
+    "Tabs":[
+	    {"url":"urip-elements/tab-1.html","height":750, "thumbnail":"images/thumbs/tab-1.png"},
+	    {"url":"urip-elements/tab-2.html","height":750, "thumbnail":"images/thumbs/tab-2.png"}
+    ],
+    "Pricing Tables":[
+    	{"url":"urip-elements/pricing-1.html","height":963, "thumbnail":"images/thumbs/pricing-1.png"},
+    	{"url":"urip-elements/pricing-2.html","height":963, "thumbnail":"images/thumbs/pricing-2.png"},
+    	{"url":"urip-elements/pricing-3.html","height":963, "thumbnail":"images/thumbs/pricing-3.png"}
+    ],
+    "Team":[
+	    {"url":"urip-elements/team-1.html","height":1089, "thumbnail":"images/thumbs/team-1.png"},
+	    {"url":"urip-elements/team-2.html","height":1128, "thumbnail":"images/thumbs/team-2.png"}
+    ],
+    "Portfolio":[
+    	{"url":"urip-elements/portfolio.html","height":701, "thumbnail":"images/thumbs/portfolio.png"}
+    ],
+    "Screenshot Slide":[
+		{"url":"urip-elements/screenshot-slide.html","height":877, "thumbnail":"images/thumbs/screenshot-slide.png", "sandbox":true, "loaderFunction":"startSlide"}
+	],
+    "Footers":[
+	    {"url":"urip-elements/footer-1.html","height":236, "thumbnail":"images/thumbs/footer-1.png"},
+	    {"url":"urip-elements/footer-2.html","height":680, "thumbnail":"images/thumbs/footer-2.png"}
+    ]
+    }
+}

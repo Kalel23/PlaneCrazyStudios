@@ -1,0 +1,220 @@
+// Header Left Buttons
+.nav-pills {
+	li {
+		a {
+			width: 60px;
+			height: 60px;
+			padding: 20px 18px;
+			background: $dark !important;
+			color: $text-dark;
+			border: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $yellow !important;
+
+			}
+		}
+
+		&.active a {
+			background: $dark !important;
+			color: $text-light;
+		}
+
+		a:hover,
+		&.active a:hover {
+			background-color: darken($yellow, 3%) !important;
+			color: lighten($dark, 10%);
+		}
+	}
+}
+
+.menu {
+	.toggle {
+		background: $yellow;
+		box-shadow: none;
+		height: 60px;
+		width: 60px;
+		line-height: 60px;
+		right: -60px;
+
+		.custom-icon {
+			background: url(../images/animat-customize.gif) center center no-repeat;
+			background-size: 60px;
+			width: 60px;
+			height: 60px;
+			display: block;
+		}
+	}
+}
+
+// Header Right Buttons
+.btn {
+	padding: 20px 15px 19px;
+
+	header & {
+		& span,
+		&:hover span {
+			width: 100%;
+			padding-right: 13px;
+		}
+	}
+}
+
+.btn-primary,
+.btn-inverse {
+	&.nohover {
+		background-color: $dark;
+		color: $text-dark;
+
+		&:hover,
+		&.hover,
+		&:focus,
+		&:active,
+		&.active {
+			background-color: darken($yellow, 3%);
+			color: lighten($dark, 10%);
+		}
+	}
+}
+
+#clearScreen {
+	&:hover,
+	&.hover,
+	&:focus,
+	&:active,
+	&.active {
+		background-color: $danger;
+		color: $text-light;
+	}
+}
+
+.btn.disabled {
+	background-color: $text-light !important;
+	border: none;
+	color: #bbb;
+}
+
+// Menu Button
+.sideButtons a#addPage {
+	background: $yellow;
+	color: $dark;
+	font-size: 14px;
+
+	> span {
+		margin-right: 9px;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: darken($yellow, 3%);
+		color: lighten($dark, 10%);
+	}
+}
+
+// Screen Editor Button
+.screen {
+	li {
+		.frameCover {
+			right: 0;
+			top: 0;
+			background: $yellow;
+			border-radius: 0;
+			height: auto;
+			opacity: 0;
+			transition: opacity 0.5s;
+			box-shadow: $shadow-side-left;
+
+			label {
+				margin-top: 0;
+				padding: 12px 15px;
+				padding-left: 29px;
+				cursor: pointer;
+
+				input {
+					top: 13px;
+
+					&:checked + .icons .icon-checked,
+					&:active + .icons .icon-checked {
+						color: $dark !important;
+					}
+				}
+
+				> span.icons {
+					top: 13px;
+					color: lighten($dark, 10%);
+				}
+			}
+
+			button {
+				span {
+					width: auto;
+				}
+			}
+
+			.btn {
+				padding: 13px 15px 14px;
+				background: $yellow;
+				color: $dark;
+
+				&.deleteBlock:hover {
+					background: $danger;
+					color: $text-light;
+				}
+
+				&.dragBlock:hover {
+					cursor: -webkit-grab;
+				}
+
+				&.dragBlock:active:hover {
+					cursor: -webkit-grabbing;
+				}
+			}
+
+			button:hover {
+				background-color: darken($yellow, 3%);
+				color: lighten($dark, 10%);
+
+				span {
+					width: auto;
+				}
+			}
+
+			.fui-gear {
+				display: none;
+			}
+		}
+
+		.editorButtons {
+			box-shadow: $shadow-side-left;
+
+			button {
+				background: $yellow;
+				color: $dark;
+				padding: 13px 15px 14px;
+
+				&.editCancelButton {
+					background: $dark;
+					color: $text-dark;
+				}
+
+				padding-right: 15px !important;
+
+				span {
+					width: auto !important;
+				}
+			}
+
+			button:hover {
+				background-color: darken($yellow, 3%);
+				color: lighten($dark, 10%);
+			}
+		}
+	}
+
+	& li:hover .frameCover {
+		opacity: 1;
+	}
+}

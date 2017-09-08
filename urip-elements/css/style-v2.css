@@ -1833,7 +1833,7 @@ a.menu-toggle span {
 .hero-subscribe-layout,
 .creative-layout,
 .event-layout {
-	background: url(../images/stocks/stock.jpg) center center no-repeat;
+	background: url(../images/background.jpeg) center center no-repeat;
 	background-attachment: fixed !important;
 	background-position: center top;
 }
